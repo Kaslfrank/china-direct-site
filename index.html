@@ -67,68 +67,39 @@
     </div>
   </section>
 
-  <!-- 2. Что комплектуем -->
-  <section class="objects" id="objects">
-    <div class="wrap">
-      <header class="section-intro section-intro--split reveal">
-        <div>
-          <p class="label">Scope</p>
-          <h2>Что мы комплектуем</h2>
-        </div>
-        <p class="section-intro__note">От одной зоны до полного оснащения объекта — жилые и коммерческие пространства любого масштаба.</p>
-      </header>
-      <ul class="objects__list">
-        <li class="objects__item reveal">
-          <span class="objects__index">01</span>
-          <div class="objects__body">
-            <h3>Квартиры</h3>
-            <p>Мебель, свет и материалы для частных резиденций в городе.</p>
-          </div>
-          <div class="objects__thumb">
-            <img src="sofas-beds-043.jpg" alt="Квартиры" loading="lazy">
-          </div>
-        </li>
-        <li class="objects__item reveal">
-          <span class="objects__index">02</span>
-          <div class="objects__body">
-            <h3>Дома</h3>
-            <p>Комплектация загородных домов и вилл под ключевые зоны.</p>
-          </div>
-          <div class="objects__thumb">
-            <img src="tables-071.jpg" alt="Дома" loading="lazy">
-          </div>
-        </li>
-        <li class="objects__item reveal">
-          <span class="objects__index">03</span>
-          <div class="objects__body">
-            <h3>Отели</h3>
-            <p>Номерной фонд, лобби, общественные зоны — серийные и кастомные позиции.</p>
-          </div>
-          <div class="objects__thumb">
-            <img src="chairs-093.jpg" alt="Отели" loading="lazy">
-          </div>
-        </li>
-        <li class="objects__item reveal">
-          <span class="objects__index">04</span>
-          <div class="objects__body">
-            <h3>Рестораны</h3>
-            <p>Посадка, барные зоны, декор — с учётом нагрузки и износостойкости.</p>
-          </div>
-          <div class="objects__thumb">
-            <img src="tables-056.jpg" alt="Рестораны" loading="lazy">
-          </div>
-        </li>
-        <li class="objects__item reveal">
-          <span class="objects__index">05</span>
-          <div class="objects__body">
-            <h3>Коммерческие объекты</h3>
-            <p>Офисы, шоурумы, retail — единый партнёр на весь объём поставки.</p>
-          </div>
-          <div class="objects__thumb">
-            <img src="armchairs-127.jpg" alt="Коммерческие объекты" loading="lazy">
-          </div>
-        </li>
-      </ul>
+  <!-- 2. What we furnish -->
+  <section class="furnish" id="objects" data-active="kitchen">
+    <div class="furnish__layout">
+      <div class="furnish__collage" aria-label="Interior composition">
+        <figure class="furnish__layer furnish__layer--panels" data-layer="panels">
+          <img src="assets/editorial/wall-panels.jpg" alt="Wall panels" loading="lazy">
+        </figure>
+        <figure class="furnish__layer furnish__layer--kitchen" data-layer="kitchen">
+          <img src="assets/editorial/kitchen.jpg" alt="Kitchen" loading="lazy">
+        </figure>
+        <figure class="furnish__layer furnish__layer--living" data-layer="living">
+          <img src="assets/editorial/furniture.jpg" alt="Furniture" loading="lazy">
+        </figure>
+        <figure class="furnish__layer furnish__layer--stone" data-layer="stone">
+          <img src="assets/editorial/stone.jpg" alt="Stone" loading="lazy">
+        </figure>
+        <figure class="furnish__layer furnish__layer--light" data-layer="light">
+          <img src="assets/editorial/lighting.jpg" alt="Lighting" loading="lazy">
+        </figure>
+      </div>
+      <nav class="furnish__index" aria-label="What we furnish">
+        <p class="furnish__index-label">What we furnish</p>
+        <ul class="furnish__categories">
+          <li><button type="button" class="furnish__cat is-active" data-layer="kitchen" data-src="assets/editorial/kitchen.jpg">Kitchens</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/furniture.jpg">Furniture</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="light" data-src="assets/editorial/lighting.jpg">Lighting</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/bathroom.jpg">Bathroom</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="panels" data-src="assets/editorial/wall-panels.jpg">Wall panels</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/walk-in-wardrobes.jpg">Walk-in wardrobes</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="stone" data-src="assets/editorial/stone.jpg">Stone</button></li>
+          <li><button type="button" class="furnish__cat" data-layer="light" data-src="assets/editorial/decor.jpg">Decor &amp; accessories</button></li>
+        </ul>
+      </nav>
     </div>
   </section>
 

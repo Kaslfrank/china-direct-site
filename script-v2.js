@@ -4,10 +4,19 @@
   const header = document.getElementById('header');
   const toggle = document.querySelector('.site-header__toggle');
   const nav = document.querySelector('.site-header__nav');
+  const hero = document.querySelector('.hero');
 
   function updateHeader() {
     if (!header) return;
-    header.classList.toggle('is-scrolled', window.scrollY > 24);
+
+    const scrolled = window.scrollY > 24;
+    header.classList.toggle('is-scrolled', scrolled);
+
+    if (hero) {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const onHero = window.scrollY < heroBottom - header.offsetHeight;
+      header.classList.toggle('is-on-hero', onHero);
+    }
   }
 
   function closeNav() {
@@ -27,58 +36,23 @@
   });
 
   window.addEventListener('scroll', updateHeader, { passive: true });
+  window.addEventListener('resize', updateHeader, { passive: true });
   updateHeader();
 
   const furnish = document.querySelector('.furnish');
   if (furnish) {
-    const defaultLayer = 'kitchen';
+    const defaultCat = 'kitchens';
     const categoryNav = furnish.querySelector('.furnish__index');
     const categories = furnish.querySelectorAll('.furnish__cat');
-    const layers = furnish.querySelectorAll('.furnish__layer');
-    const defaultCategory = furnish.querySelector('.furnish__cat[data-layer="kitchen"]');
+    const defaultCategory = furnish.querySelector('.furnish__cat[data-cat="kitchens"]');
 
-    const defaultLayerImages = {
-      panels: 'assets/editorial/wall-panels.jpg',
-      kitchen: 'assets/editorial/kitchen.jpg',
-      living: 'assets/editorial/furniture.jpg',
-      stone: 'assets/editorial/stone.jpg',
-      light: 'assets/editorial/lighting.jpg',
-    };
+    function setActiveCat(cat, button) {
+      if (!cat) return;
 
-    const categoryImages = {
-      Kitchens: defaultLayerImages.kitchen,
-      Furniture: defaultLayerImages.living,
-      Lighting: defaultLayerImages.light,
-      Bathroom: 'assets/editorial/bathroom.jpg',
-      'Wall panels': defaultLayerImages.panels,
-      'Walk-in wardrobes': 'assets/editorial/walk-in-wardrobes.jpg',
-      Stone: defaultLayerImages.stone,
-      'Decor & accessories': 'assets/editorial/decor.jpg',
-    };
-
-    function resetLayerImages() {
-      layers.forEach((layer) => {
-        const img = layer.querySelector('img');
-        const src = defaultLayerImages[layer.dataset.layer];
-        if (img && src) img.src = src;
+      furnish.dataset.active = cat;
+      categories.forEach((item) => {
+        item.classList.toggle('is-active', button ? item === button : item === defaultCategory);
       });
-    }
-
-    function setActiveLayer(layer, category) {
-      if (!layer) return;
-      furnish.dataset.active = layer;
-      categories.forEach((cat) => {
-        cat.classList.toggle('is-active', category ? cat === category : cat === defaultCategory);
-      });
-
-      resetLayerImages();
-
-      if (category) {
-        const label = category.textContent.trim();
-        const src = category.dataset.src || categoryImages[label];
-        const img = furnish.querySelector(`.furnish__layer[data-layer="${layer}"] img`);
-        if (src && img) img.src = src;
-      }
     }
 
     function enterNav() {
@@ -87,17 +61,17 @@
 
     function leaveNav() {
       furnish.classList.remove('is-nav-active');
-      setActiveLayer(defaultLayer, defaultCategory);
+      setActiveCat(defaultCat, defaultCategory);
     }
 
     categories.forEach((cat) => {
       cat.addEventListener('mouseenter', () => {
         enterNav();
-        setActiveLayer(cat.dataset.layer, cat);
+        setActiveCat(cat.dataset.cat, cat);
       });
       cat.addEventListener('focus', () => {
         enterNav();
-        setActiveLayer(cat.dataset.layer, cat);
+        setActiveCat(cat.dataset.cat, cat);
       });
     });
 
@@ -121,7 +95,7 @@
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -48px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
   } else {

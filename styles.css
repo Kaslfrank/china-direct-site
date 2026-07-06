@@ -404,61 +404,519 @@ h3 {
   }
 }
 
-/* ── Objects ── */
-.objects {
-  padding-block: var(--space-section);
-  background: var(--surface);
+/* ── Furnish — editorial collage ── */
+.furnish {
+  --furnish-bg: #f6f3ef;
+  --furnish-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --furnish-dur: 0.75s;
+  padding-block: clamp(120px, 16vw, 200px);
+  background: var(--furnish-bg);
 }
 
-.objects__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--line);
-}
-
-.objects__item {
+.furnish__layout {
   display: grid;
-  grid-template-columns: 56px 1fr 200px;
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, 1fr) minmax(168px, 240px);
+  gap: clamp(32px, 4.5vw, 56px);
   align-items: center;
-  padding-block: clamp(32px, 4vw, 48px);
-  border-bottom: 1px solid var(--line);
-  transition: padding-left 0.5s var(--ease-out);
+  width: min(1280px, 100% - clamp(56px, 10vw, 140px));
+  margin-inline: auto;
 }
 
-.objects__item:hover { padding-left: 12px; }
-
-.objects__index {
-  font-family: var(--serif);
-  font-size: clamp(28px, 2.5vw, 36px);
-  color: var(--ink-faint);
-  line-height: 1;
+.furnish__collage,
+.furnish__canvas {
+  position: relative;
+  width: 72%;
+  max-width: 920px;
+  min-height: clamp(540px, 66vh, 780px);
+  margin-inline: auto 0;
+  isolation: isolate;
 }
 
-.objects__body p {
+.furnish__layer {
+  position: absolute;
   margin: 0;
-  max-width: 420px;
-  font-size: 14px;
-  color: var(--ink-soft);
-  line-height: 1.65;
-}
-
-.objects__thumb {
-  width: 200px;
-  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #e8e4dc;
+  opacity: 1;
+  filter: none;
+  transform: scale(1);
+  pointer-events: none;
+  transition:
+    top var(--furnish-dur) var(--furnish-ease),
+    right var(--furnish-dur) var(--furnish-ease),
+    bottom var(--furnish-dur) var(--furnish-ease),
+    left var(--furnish-dur) var(--furnish-ease),
+    width var(--furnish-dur) var(--furnish-ease),
+    height var(--furnish-dur) var(--furnish-ease),
+    opacity var(--furnish-dur) var(--furnish-ease),
+    filter var(--furnish-dur) var(--furnish-ease),
+    transform var(--furnish-dur) var(--furnish-ease),
+    z-index 0s linear var(--furnish-dur);
 }
 
-.objects__thumb img {
+.furnish__layer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s var(--ease-out);
+  transform: scale(1);
+  transition:
+    transform var(--furnish-dur) var(--furnish-ease),
+    filter var(--furnish-dur) var(--furnish-ease),
+    opacity var(--furnish-dur) var(--furnish-ease),
+    object-position var(--furnish-dur) var(--furnish-ease);
 }
 
-.objects__item:hover .objects__thumb img { transform: scale(1.05); }
+.furnish__layer--panels img {
+  object-position: 48% 54%;
+  opacity: 0.72;
+  filter: contrast(0.86) brightness(1.04) saturate(0.78);
+}
+
+.furnish__layer--kitchen img {
+  object-position: 66% 42%;
+}
+
+.furnish__layer--living img {
+  object-position: 52% 28%;
+}
+
+.furnish__layer--stone img {
+  object-position: 42% 62%;
+}
+
+.furnish__layer--light img,
+.furnish__layer--lighting img {
+  object-position: 54% 30%;
+}
+
+.furnish__layer--panels {
+  bottom: 0;
+  left: -10%;
+  width: 115%;
+  height: 44%;
+  z-index: 1;
+}
+
+.furnish__layer--kitchen {
+  top: 3%;
+  left: -5%;
+  width: 64%;
+  height: 76%;
+  z-index: 3;
+}
+
+.furnish__layer--living {
+  top: -2%;
+  right: 1%;
+  left: auto;
+  width: 36%;
+  height: 82%;
+  z-index: 4;
+}
+
+.furnish__layer--stone {
+  bottom: 10%;
+  left: 19%;
+  width: 19%;
+  height: 22%;
+  z-index: 7;
+}
+
+.furnish__layer--light,
+.furnish__layer--lighting {
+  top: 10%;
+  right: -3%;
+  left: auto;
+  width: 17%;
+  height: 21%;
+  z-index: 5;
+}
+
+.furnish.is-nav-active[data-active="kitchen"] .furnish__layer--kitchen,
+.furnish.is-nav-active[data-active="living"] .furnish__layer--living,
+.furnish.is-nav-active[data-active="stone"] .furnish__layer--stone,
+.furnish.is-nav-active[data-active="panels"] .furnish__layer--panels,
+.furnish.is-nav-active[data-active="light"] .furnish__layer--light,
+.furnish.is-nav-active[data-active="lighting"] .furnish__layer--lighting {
+  opacity: 1;
+  filter: none;
+  z-index: 10;
+  transition:
+    top var(--furnish-dur) var(--furnish-ease),
+    right var(--furnish-dur) var(--furnish-ease),
+    bottom var(--furnish-dur) var(--furnish-ease),
+    left var(--furnish-dur) var(--furnish-ease),
+    width var(--furnish-dur) var(--furnish-ease),
+    height var(--furnish-dur) var(--furnish-ease),
+    opacity var(--furnish-dur) var(--furnish-ease),
+    filter var(--furnish-dur) var(--furnish-ease),
+    transform var(--furnish-dur) var(--furnish-ease),
+    z-index 0s;
+}
+
+.furnish.is-nav-active[data-active="kitchen"] .furnish__layer--kitchen img,
+.furnish.is-nav-active[data-active="living"] .furnish__layer--living img,
+.furnish.is-nav-active[data-active="stone"] .furnish__layer--stone img,
+.furnish.is-nav-active[data-active="panels"] .furnish__layer--panels img,
+.furnish.is-nav-active[data-active="light"] .furnish__layer--light img,
+.furnish.is-nav-active[data-active="lighting"] .furnish__layer--lighting img {
+  transform: scale(1.15);
+  filter: none;
+  opacity: 1;
+}
+
+.furnish.is-nav-active[data-active="panels"] .furnish__layer--panels img {
+  filter: contrast(0.96) brightness(1.02) saturate(0.94);
+}
+
+.furnish.is-nav-active[data-active="kitchen"] .furnish__layer:not(.furnish__layer--kitchen),
+.furnish.is-nav-active[data-active="living"] .furnish__layer:not(.furnish__layer--living),
+.furnish.is-nav-active[data-active="stone"] .furnish__layer:not(.furnish__layer--stone),
+.furnish.is-nav-active[data-active="panels"] .furnish__layer:not(.furnish__layer--panels),
+.furnish.is-nav-active[data-active="light"] .furnish__layer:not(.furnish__layer--light),
+.furnish.is-nav-active[data-active="lighting"] .furnish__layer:not(.furnish__layer--lighting) {
+  opacity: 0.42;
+  filter: blur(3px);
+}
+
+.furnish.is-nav-active[data-active="kitchen"] .furnish__layer:not(.furnish__layer--kitchen) img,
+.furnish.is-nav-active[data-active="living"] .furnish__layer:not(.furnish__layer--living) img,
+.furnish.is-nav-active[data-active="stone"] .furnish__layer:not(.furnish__layer--stone) img,
+.furnish.is-nav-active[data-active="panels"] .furnish__layer:not(.furnish__layer--panels) img,
+.furnish.is-nav-active[data-active="light"] .furnish__layer:not(.furnish__layer--light) img,
+.furnish.is-nav-active[data-active="lighting"] .furnish__layer:not(.furnish__layer--lighting) img {
+  transform: scale(1);
+  opacity: 0.38;
+}
+
+.furnish[data-active="kitchen"] .furnish__layer--kitchen {
+  top: 3%;
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 64%;
+  height: 76%;
+}
+
+.furnish[data-active="kitchen"] .furnish__layer--living {
+  top: -2%;
+  right: 1%;
+  left: auto;
+  bottom: auto;
+  width: 36%;
+  height: 82%;
+  z-index: 4;
+}
+
+.furnish[data-active="kitchen"] .furnish__layer--panels {
+  bottom: 0;
+  left: -10%;
+  right: auto;
+  top: auto;
+  width: 115%;
+  height: 44%;
+  z-index: 1;
+}
+
+.furnish[data-active="kitchen"] .furnish__layer--stone {
+  bottom: 10%;
+  left: 19%;
+  right: auto;
+  top: auto;
+  width: 19%;
+  height: 22%;
+  z-index: 7;
+}
+
+.furnish[data-active="kitchen"] .furnish__layer--light,
+.furnish[data-active="kitchen"] .furnish__layer--lighting {
+  top: 10%;
+  right: -3%;
+  left: auto;
+  bottom: auto;
+  width: 17%;
+  height: 21%;
+  z-index: 5;
+}
+
+.furnish[data-active="living"] .furnish__layer--living {
+  top: 5%;
+  left: 2%;
+  right: auto;
+  bottom: auto;
+  width: 58%;
+  height: 74%;
+}
+
+.furnish[data-active="living"] .furnish__layer--living img {
+  object-position: 50% 32%;
+}
+
+.furnish[data-active="living"] .furnish__layer--kitchen {
+  top: 6%;
+  right: -2%;
+  left: auto;
+  bottom: auto;
+  width: 30%;
+  height: 44%;
+  z-index: 3;
+}
+
+.furnish[data-active="living"] .furnish__layer--panels {
+  bottom: 0;
+  left: -8%;
+  right: auto;
+  top: auto;
+  width: 92%;
+  height: 34%;
+  z-index: 1;
+}
+
+.furnish[data-active="living"] .furnish__layer--stone {
+  bottom: 12%;
+  left: 6%;
+  right: auto;
+  top: auto;
+  width: 16%;
+  height: 18%;
+  z-index: 5;
+}
+
+.furnish[data-active="living"] .furnish__layer--light,
+.furnish[data-active="living"] .furnish__layer--lighting {
+  top: 4%;
+  right: 24%;
+  left: auto;
+  bottom: auto;
+  width: 14%;
+  height: 17%;
+  z-index: 4;
+}
+
+.furnish[data-active="stone"] .furnish__layer--stone {
+  top: 16%;
+  left: 10%;
+  right: auto;
+  bottom: auto;
+  width: 54%;
+  height: 58%;
+}
+
+.furnish[data-active="stone"] .furnish__layer--stone img {
+  object-position: 48% 50%;
+}
+
+.furnish[data-active="stone"] .furnish__layer--kitchen {
+  top: 2%;
+  left: -4%;
+  right: auto;
+  bottom: auto;
+  width: 40%;
+  height: 44%;
+  z-index: 3;
+}
+
+.furnish[data-active="stone"] .furnish__layer--living {
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  width: 28%;
+  height: 56%;
+  z-index: 2;
+}
+
+.furnish[data-active="stone"] .furnish__layer--panels {
+  bottom: 0;
+  left: -10%;
+  right: auto;
+  top: auto;
+  width: 100%;
+  height: 30%;
+  z-index: 1;
+}
+
+.furnish[data-active="stone"] .furnish__layer--light,
+.furnish[data-active="stone"] .furnish__layer--lighting {
+  top: 10%;
+  right: 2%;
+  left: auto;
+  bottom: auto;
+  width: 15%;
+  height: 18%;
+  z-index: 4;
+}
+
+.furnish[data-active="panels"] .furnish__layer--panels {
+  top: 20%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 92%;
+  height: 56%;
+}
+
+.furnish[data-active="panels"] .furnish__layer--panels img {
+  object-position: 50% 48%;
+}
+
+.furnish[data-active="panels"] .furnish__layer--kitchen {
+  bottom: 6%;
+  right: 0;
+  left: auto;
+  top: auto;
+  width: 32%;
+  height: 36%;
+  z-index: 4;
+}
+
+.furnish[data-active="panels"] .furnish__layer--living {
+  top: -1%;
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 24%;
+  height: 52%;
+  z-index: 3;
+}
+
+.furnish[data-active="panels"] .furnish__layer--stone {
+  bottom: 4%;
+  left: 20%;
+  right: auto;
+  top: auto;
+  width: 14%;
+  height: 16%;
+  z-index: 5;
+}
+
+.furnish[data-active="panels"] .furnish__layer--light,
+.furnish[data-active="panels"] .furnish__layer--lighting {
+  top: 6%;
+  right: 4%;
+  left: auto;
+  bottom: auto;
+  width: 14%;
+  height: 16%;
+  z-index: 2;
+}
+
+.furnish[data-active="light"] .furnish__layer--light,
+.furnish[data-active="lighting"] .furnish__layer--light,
+.furnish[data-active="lighting"] .furnish__layer--lighting {
+  top: 16%;
+  left: 26%;
+  right: auto;
+  bottom: auto;
+  width: 46%;
+  height: 48%;
+}
+
+.furnish[data-active="light"] .furnish__layer--light img,
+.furnish[data-active="lighting"] .furnish__layer--light img,
+.furnish[data-active="lighting"] .furnish__layer--lighting img {
+  object-position: 52% 38%;
+}
+
+.furnish[data-active="light"] .furnish__layer--kitchen,
+.furnish[data-active="lighting"] .furnish__layer--kitchen {
+  top: 4%;
+  left: -6%;
+  right: auto;
+  bottom: auto;
+  width: 46%;
+  height: 50%;
+  z-index: 3;
+}
+
+.furnish[data-active="light"] .furnish__layer--living,
+.furnish[data-active="lighting"] .furnish__layer--living {
+  top: -2%;
+  right: -2%;
+  left: auto;
+  bottom: auto;
+  width: 30%;
+  height: 66%;
+  z-index: 2;
+}
+
+.furnish[data-active="light"] .furnish__layer--panels,
+.furnish[data-active="lighting"] .furnish__layer--panels {
+  bottom: 0;
+  left: -10%;
+  right: auto;
+  top: auto;
+  width: 110%;
+  height: 34%;
+  z-index: 1;
+}
+
+.furnish[data-active="light"] .furnish__layer--stone,
+.furnish[data-active="lighting"] .furnish__layer--stone {
+  bottom: 10%;
+  left: 12%;
+  right: auto;
+  top: auto;
+  width: 16%;
+  height: 19%;
+  z-index: 4;
+}
+
+.furnish__index {
+  position: relative;
+  z-index: 20;
+  padding-block: clamp(16px, 3vw, 32px);
+}
+
+.furnish__index-label {
+  margin: 0 0 clamp(32px, 4vw, 56px);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.furnish__categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.furnish__categories li + li {
+  margin-top: clamp(6px, 1vw, 10px);
+}
+
+.furnish__cat {
+  display: block;
+  width: 100%;
+  padding: 0.12em 0;
+  border: 0;
+  background: none;
+  font-family: var(--sans);
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  text-align: left;
+  color: var(--ink);
+  opacity: 0.22;
+  cursor: pointer;
+  transition:
+    opacity 0.7s var(--furnish-ease),
+    transform 0.7s var(--furnish-ease);
+}
+
+.furnish__cat.is-active {
+  opacity: 1;
+}
+
+.furnish__cat:hover {
+  opacity: 0.72;
+}
+
+.furnish__cat.is-active:hover {
+  opacity: 1;
+}
 
 /* ── Why ── */
 .why {
@@ -751,11 +1209,6 @@ h3 {
 .why__card:nth-child(4) { transition-delay: 0.18s; }
 .why__card:nth-child(5) { transition-delay: 0.24s; }
 
-.objects__item:nth-child(2) { transition-delay: 0.05s; }
-.objects__item:nth-child(3) { transition-delay: 0.1s; }
-.objects__item:nth-child(4) { transition-delay: 0.15s; }
-.objects__item:nth-child(5) { transition-delay: 0.2s; }
-
 .catalog__tile:nth-child(2) { transition-delay: 0.08s; }
 .catalog__tile:nth-child(3) { transition-delay: 0.16s; }
 .catalog__tile:nth-child(4) { transition-delay: 0.24s; }
@@ -822,12 +1275,47 @@ h3 {
     max-width: none;
   }
 
-  .objects__item {
-    grid-template-columns: 48px 1fr;
+  .furnish__layout {
+    grid-template-columns: 1fr;
+    gap: clamp(64px, 10vw, 96px);
+    width: min(1280px, 100% - clamp(40px, 8vw, 80px));
   }
 
-  .objects__thumb {
-    display: none;
+  .furnish__collage,
+  .furnish__canvas {
+    width: 88%;
+    max-width: none;
+    min-height: clamp(480px, 58vh, 640px);
+    margin-inline: auto;
+  }
+
+  .furnish__layer--kitchen {
+    width: 68%;
+    height: 72%;
+    left: -2%;
+  }
+
+  .furnish__layer--living {
+    right: 0;
+    width: 38%;
+    height: 76%;
+  }
+
+  .furnish__layer--stone {
+    left: 16%;
+    width: 21%;
+    height: 24%;
+  }
+
+  .furnish__layer--light,
+  .furnish__layer--lighting {
+    right: 0;
+    width: 18%;
+    height: 22%;
+  }
+
+  .furnish__index {
+    padding-inline: clamp(8px, 3vw, 24px);
   }
 
   .why__grid {
