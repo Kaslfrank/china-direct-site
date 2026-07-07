@@ -1,4 +1,4 @@
-<!doctype html>
+\<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -8,14 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
 
-<header class="site-header" id="header">
+<header class="site-header is-on-hero" id="header">
   <a class="site-header__logo" href="#top">
-    <img src="logo.png" alt="">
-    <span>China Direct</span>
+    <span class="site-header__logo-mark">
+      <img src="logo.png" alt="">
+    </span>
+    <span class="site-header__logo-text">China Direct</span>
   </a>
   <button class="site-header__toggle" type="button" aria-label="Меню" aria-expanded="false">
     <span></span><span></span>
@@ -25,6 +27,7 @@
     <a href="#why">О компании</a>
     <a href="#catalog">Решения</a>
     <a href="#work">Процесс</a>
+    <a href="#projects">Проекты</a>
     <a href="#designers">Дизайнерам</a>
     <a href="#contacts">Контакты</a>
   </nav>
@@ -32,238 +35,487 @@
 
 <main id="top">
 
-  <!-- 1. Hero -->
-  <section class="hero" aria-label="China Direct — комплектация интерьеров">
-    <div class="hero__shell">
-      <div class="hero__content">
-        <p class="hero__kicker">Interior furnishing • Direct from China</p>
-        <h1 class="hero__title">Комплектация интерьеров из&nbsp;Китая для частных и&nbsp;коммерческих проектов</h1>
-        <p class="hero__lead">Мебель, свет и интерьерные решения от проверенных фабрик. Сопровождаем проект от подбора до доставки на объект.</p>
-        <div class="hero__actions">
-          <a class="btn btn--dark hero__btn" href="https://wa.me/79953441995" target="_blank" rel="noopener">Обсудить проект</a>
-          <a class="btn btn--line hero__btn" href="#catalog">Смотреть решения</a>
+  <!-- Hero -->
+  <section class="hero">
+    <img class="hero__bg" src="hero-penthouse.jpg" alt="Интерьерный проект China Direct">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <h1 class="hero__title">Комплектация<br>интерьеров<br>из Китая</h1>
+      <p class="hero__lead">Мебель. Свет. Кухни. Камень. Сантехника.<br>Полное сопровождение проекта от фабрики до объекта.</p>
+      <div class="hero__actions">
+        <a class="btn btn--dark hero__btn" href="https://wa.me/79953441995" target="_blank" rel="noopener">Получить консультацию</a>
+        <a class="btn btn--line hero__btn" href="#projects">Наши проекты</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about__wrap">
+      <div class="about__grid">
+        <div class="about__content reveal">
+          <p class="about__label">О компании</p>
+          <h2 class="about__title">Мы сопровождаем проект от идеи до установки мебели.</h2>
+          <p class="about__text">China Direct более 7 лет помогает частным клиентам, дизайнерам и студиям комплектовать интерьеры мебелью, светом, сантехникой и отделочными материалами напрямую с фабрик Китая. Мы подбираем производителей, проверяем качество, контролируем упаковку и организуем доставку.</p>
         </div>
-        <div class="hero__proof">
-          <dl class="hero__metrics">
-            <div class="hero__metric">
-              <dt>7+</dt>
-              <dd>лет опыта</dd>
-            </div>
-            <div class="hero__metric">
-              <dt>500+</dt>
-              <dd>реализованных проектов</dd>
-            </div>
-            <div class="hero__metric">
-              <dt>3 млн+</dt>
-              <dd>товаров фабрик</dd>
-            </div>
-          </dl>
-          <p class="hero__geo">Россия • Казахстан • Беларусь</p>
+        <div class="about__cards">
+          <article class="about__card reveal">
+            <p class="about__card-value">7+</p>
+            <p class="about__card-desc">лет опыта</p>
+          </article>
+          <article class="about__card reveal">
+            <p class="about__card-value">500+</p>
+            <p class="about__card-desc">реализованных проектов</p>
+          </article>
+          <article class="about__card reveal">
+            <p class="about__card-value">30000+</p>
+            <p class="about__card-desc">товаров фабрик</p>
+          </article>
+          <article class="about__card reveal">
+            <p class="about__card-value about__card-value--text">Полное сопровождение</p>
+            <p class="about__card-desc">от подбора до доставки</p>
+          </article>
         </div>
       </div>
-      <figure class="hero__figure">
-        <img src="tables-078.jpg" alt="Интерьерный проект China Direct">
-      </figure>
     </div>
   </section>
 
-  <!-- 2. What we furnish -->
-  <section class="furnish" id="objects" data-active="kitchen">
-    <div class="furnish__layout">
-      <div class="furnish__collage" aria-label="Interior composition">
-        <figure class="furnish__layer furnish__layer--panels" data-layer="panels">
-          <img src="assets/editorial/wall-panels.jpg" alt="Wall panels" loading="lazy">
-        </figure>
-        <figure class="furnish__layer furnish__layer--kitchen" data-layer="kitchen">
-          <img src="assets/editorial/kitchen.jpg" alt="Kitchen" loading="lazy">
-        </figure>
-        <figure class="furnish__layer furnish__layer--living" data-layer="living">
-          <img src="assets/editorial/furniture.jpg" alt="Furniture" loading="lazy">
-        </figure>
-        <figure class="furnish__layer furnish__layer--stone" data-layer="stone">
-          <img src="assets/editorial/stone.jpg" alt="Stone" loading="lazy">
-        </figure>
-        <figure class="furnish__layer furnish__layer--light" data-layer="light">
-          <img src="assets/editorial/lighting.jpg" alt="Lighting" loading="lazy">
-        </figure>
-      </div>
-      <nav class="furnish__index" aria-label="What we furnish">
-        <p class="furnish__index-label">What we furnish</p>
-        <ul class="furnish__categories">
-          <li><button type="button" class="furnish__cat is-active" data-layer="kitchen" data-src="assets/editorial/kitchen.jpg">Kitchens</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/furniture.jpg">Furniture</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="light" data-src="assets/editorial/lighting.jpg">Lighting</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/bathroom.jpg">Bathroom</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="panels" data-src="assets/editorial/wall-panels.jpg">Wall panels</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="living" data-src="assets/editorial/walk-in-wardrobes.jpg">Walk-in wardrobes</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="stone" data-src="assets/editorial/stone.jpg">Stone</button></li>
-          <li><button type="button" class="furnish__cat" data-layer="light" data-src="assets/editorial/decor.jpg">Decor &amp; accessories</button></li>
-        </ul>
-      </nav>
-    </div>
-  </section>
-
-  <!-- 3. Почему China Direct -->
-  <section class="why" id="why">
-    <div class="wrap">
-      <header class="section-intro reveal">
-        <p class="label">Why China Direct</p>
-        <h2>Почему China Direct</h2>
-        <p class="section-intro__lead">Мы — не витрина мебели. Мы закрываем весь цикл комплектации: от подбора фабрики до доставки на объект.</p>
-      </header>
-      <div class="why__grid">
-        <article class="why__card reveal">
-          <span class="why__num">01</span>
-          <h3>Прямые фабрики</h3>
-          <p>Более 500 проверенных производств в базе. Работаем без лишних звеньев — вы получаете цену фабрики, а не дилера.</p>
-        </article>
-        <article class="why__card reveal">
-          <span class="why__num">02</span>
-          <h3>Контроль качества</h3>
-          <p>Фото и видео на производстве, проверка перед отгрузкой: комплектация, отделка, упаковка.</p>
-        </article>
-        <article class="why__card reveal">
-          <span class="why__num">03</span>
-          <h3>Подбор аналогов</h3>
-          <p>Находим решения под референсы европейских брендов — по форме, материалу и пропорциям.</p>
-        </article>
-        <article class="why__card reveal">
-          <span class="why__num">04</span>
-          <h3>Производство под проект</h3>
-          <p>Индивидуальные размеры, ткани, отделка и комплектация — согласуем до запуска в работу.</p>
-        </article>
-        <article class="why__card reveal">
-          <span class="why__num">05</span>
-          <h3>Логистика</h3>
-          <p>Консолидация, выкуп, таможня и доставка в Россию и Беларусь — одним партнёром.</p>
-        </article>
+  <!-- What we furnish -->
+  <section class="furnish" id="objects" data-active="kitchens" aria-label="Что мы комплектуем">
+    <div class="furnish__spread">
+      <h2 class="furnish__title">Что мы комплектуем</h2>
+      <div class="furnish__layout">
+        <div class="furnish__collage" aria-label="Interior composition">
+          <figure class="furnish__layer furnish__layer--panels" data-cat="panels">
+            <div class="furnish__frame"><img src="assets/editorial/wall-panels.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--kitchen" data-cat="kitchens">
+            <div class="furnish__frame"><img src="assets/editorial/kitchen.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--furniture" data-cat="furniture">
+            <div class="furnish__frame"><img src="assets/editorial/furniture.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--wardrobes" data-cat="wardrobes">
+            <div class="furnish__frame"><img src="assets/editorial/walk-in-wardrobes.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--bathroom" data-cat="bathroom">
+            <div class="furnish__frame"><img src="assets/editorial/bathroom.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--decor" data-cat="decor">
+            <div class="furnish__frame"><img src="assets/editorial/decor.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--stone" data-cat="stone">
+            <div class="furnish__frame"><img src="assets/editorial/stone.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+          <figure class="furnish__layer furnish__layer--lighting" data-cat="lighting">
+            <div class="furnish__frame"><img src="assets/editorial/lighting.jpg" alt="" loading="lazy" decoding="async"></div>
+          </figure>
+        </div>
+        <nav class="furnish__index" aria-label="Категории">
+          <ul class="furnish__categories">
+            <li><button class="furnish__cat is-active" type="button" data-cat="kitchens">Кухни</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="furniture">Мебель</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="lighting">Освещение</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="bathroom">Ванные</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="panels">Настенные панели</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="wardrobes">Гардеробные</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="stone">Камень</button></li>
+            <li><button class="furnish__cat" type="button" data-cat="decor">Декор и аксессуары</button></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </section>
 
-  <!-- 4. Каталог решений -->
+  <!-- 4. Интерьерные решения -->
   <section class="catalog" id="catalog">
-    <div class="wrap">
+    <div class="catalog__spread">
       <header class="section-intro section-intro--split reveal">
         <div>
           <p class="label">Solutions</p>
-          <h2>Каталог решений</h2>
+          <h2>Интерьерные решения</h2>
         </div>
-        <p class="section-intro__note">Ключевые категории для комплектации. Стоимость рассчитывается индивидуально — отправьте референсы, подберём варианты.</p>
+        <p class="section-intro__note">Подберем фабрики, мебель, освещение и отделку в выбранной эстетике. От спокойного минимализма до премиальной современной классики.</p>
       </header>
       <div class="catalog__grid">
+        <a class="catalog__tile catalog__tile--hero reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <img src="assets/interior-styles/contemporary.jpeg" alt="Contemporary" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Contemporary</span>
+          </div>
+        </a>
+        <a class="catalog__tile catalog__tile--tall reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <img src="assets/interior-styles/japandi.jpeg" alt="Japandi" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Japandi</span>
+          </div>
+        </a>
+        <a class="catalog__tile catalog__tile--compact reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <img src="assets/interior-styles/modern-classic.jpeg" alt="Modern Classic" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Modern Classic</span>
+          </div>
+        </a>
+        <a class="catalog__tile catalog__tile--compact reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <img src="assets/interior-styles/luxury.jpeg" alt="Luxury" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Luxury</span>
+          </div>
+        </a>
         <a class="catalog__tile catalog__tile--wide reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="sofas-beds-017.jpg" alt="Диваны" loading="lazy">
-          <span class="catalog__name">Диваны</span>
+          <img src="assets/interior-styles/minimalism.jpeg" alt="Minimalism" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Minimalism</span>
+          </div>
         </a>
-        <a class="catalog__tile reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="tables-066.jpg" alt="Столы" loading="lazy">
-          <span class="catalog__name">Столы</span>
-        </a>
-        <a class="catalog__tile reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="chairs-083.jpg" alt="Стулья" loading="lazy">
-          <span class="catalog__name">Стулья</span>
-        </a>
-        <a class="catalog__tile reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="armchairs-124.jpg" alt="Кресла" loading="lazy">
-          <span class="catalog__name">Кресла</span>
-        </a>
-        <a class="catalog__tile catalog__tile--wide reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="sofas-beds-039.jpg" alt="Кровати" loading="lazy">
-          <span class="catalog__name">Кровати</span>
+        <a class="catalog__tile catalog__tile--vertical reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <img src="assets/interior-styles/organic-modern.jpeg" alt="Organic Modern" loading="lazy">
+          <div class="catalog__caption">
+            <span class="catalog__name">Organic Modern</span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 5. Как работаем -->
-  <section class="process" id="work">
+  <!-- 5. Почему China Direct -->
+  <section class="why" id="why">
     <div class="wrap">
-      <header class="section-intro reveal">
-        <p class="label">Process</p>
-        <h2>Как мы работаем</h2>
-        <p class="section-intro__lead">Процесс выстроен так, чтобы дизайнер или заказчик получил готовое решение без самостоятельного поиска фабрик.</p>
+      <header class="why__intro reveal">
+        <h2>Почему China Direct</h2>
+        <p class="why__lead">Берем на себя весь процесс комплектации — от поиска фабрик и проверки качества до доставки готового интерьера.</p>
       </header>
-      <ol class="process__steps">
-        <li class="process__step reveal">
-          <span class="process__num">01</span>
-          <div>
-            <h3>Получаем задачу</h3>
-            <p>Проект, референсы, размеры, количество, бюджет и город доставки.</p>
+      <div class="why__grid">
+        <article class="why__card reveal">
+          <span class="why__num">01.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l4-2.5V21M7 21V8l5-3v16M12 21V5l5-2.5V21M3 21h18"/><path d="M15 7v2M18 5.5v2"/></svg>
+            <h3>Проверенные фабрики</h3>
           </div>
-        </li>
-        <li class="process__step reveal">
-          <span class="process__num">02</span>
-          <div>
+          <p>Работаем только с производителями, качество которых подтверждено реализованными проектами.</p>
+        </article>
+        <article class="why__card reveal">
+          <span class="why__num">02.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l4.5 4.5"/><path d="M8.5 10.5h4M10.5 8.5v4"/></svg>
+            <h3>Контроль качества</h3>
+          </div>
+          <p>Фото- и видеоотчеты, проверка комплектации, упаковки и готовности перед отправкой.</p>
+        </article>
+        <article class="why__card reveal">
+          <span class="why__num">03.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 6.5L12 21 4.5 9.5 12 3z"/><path d="M4.5 9.5h15"/></svg>
+            <h3>Подбор аналогов</h3>
+          </div>
+          <p>Находим качественные альтернативы европейским брендам без потери эстетики.</p>
+        </article>
+        <article class="why__card reveal">
+          <span class="why__num">04.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12v9M4 7.5L12 12l8-4.5"/></svg>
+            <h3>Полная комплектация</h3>
+          </div>
+          <p>Мебель, освещение, сантехника, отделочные материалы, двери и декор.</p>
+        </article>
+        <article class="why__card reveal">
+          <span class="why__num">05.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18l1.5-7h9L18 18"/><path d="M9 11V8l3-2 3 2v3"/><path d="M8 14h8"/></svg>
+            <h3>Логистика под ключ</h3>
+          </div>
+          <p>Консолидация, надежная упаковка, экспорт и доставка до объекта.</p>
+        </article>
+        <article class="why__card reveal">
+          <span class="why__num">06.</span>
+          <div class="why__heading">
+            <svg class="why__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8d806f" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12l2.5 2.5c.8.8 2.2.8 3 0l3-3"/><path d="M5 16c1.8-1.5 3.5-1.5 5.2 0"/><path d="M13.8 16c1.7-1.5 3.4-1.5 5.2 0"/><path d="M9 12V9c0-1 .8-2 2-2h.5"/><path d="M15 12V9c0-1-.8-2-2-2h-.5"/></svg>
+            <h3>Сопровождение проекта</h3>
+          </div>
+          <p>Один контакт на всех этапах — от первого запроса до получения заказа.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Процесс -->
+  <section class="process" id="work">
+    <div class="process__spread">
+      <header class="process__intro reveal">
+        <h2>От идеи до готового интерьера</h2>
+        <p class="process__lead">Берем на себя весь процесс комплектации — от получения проекта до установки мебели на объекте.</p>
+      </header>
+      <div class="process__grid">
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/01-project.png" alt="Получаем проект" loading="lazy">
+          </div>
+          <div class="process__body">
+            <h3>Получаем проект</h3>
+            <p>Планировки, 3D и спецификации.</p>
+          </div>
+        </article>
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/02-showroom.png" alt="Подбираем фабрики" loading="lazy">
+          </div>
+          <div class="process__body">
             <h3>Подбираем фабрики</h3>
-            <p>Ищем производителей под стиль, качество и ценовой сегмент.</p>
+            <p>Находим подходящих производителей.</p>
           </div>
-        </li>
-        <li class="process__step reveal">
-          <span class="process__num">03</span>
-          <div>
+        </article>
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/03-materials.png" alt="Согласовываем материалы" loading="lazy">
+          </div>
+          <div class="process__body">
             <h3>Согласовываем материалы</h3>
-            <p>Ткани, цвет, размеры, отделка, упаковка и сроки производства.</p>
+            <p>Ткани, камень, дерево и металл.</p>
           </div>
-        </li>
-        <li class="process__step reveal">
-          <span class="process__num">04</span>
-          <div>
-            <h3>Контролируем производство</h3>
-            <p>Запрашиваем фото и видео, при необходимости проверяем на месте.</p>
+        </article>
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/04-quality.png" alt="Контролируем качество" loading="lazy">
           </div>
-        </li>
-        <li class="process__step reveal">
-          <span class="process__num">05</span>
-          <div>
-            <h3>Проверяем качество</h3>
-            <p>Контроль перед отправкой: комплектация, внешний вид, упаковка.</p>
+          <div class="process__body">
+            <h3>Контролируем качество</h3>
+            <p>Фото- и видеоотчеты перед отправкой.</p>
           </div>
-        </li>
-        <li class="process__step reveal">
-          <span class="process__num">06</span>
-          <div>
-            <h3>Организуем доставку</h3>
-            <p>Консолидация, логистика и доставка до России или Беларуси.</p>
+        </article>
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/05-logistics.png" alt="Организуем логистику" loading="lazy">
           </div>
-        </li>
-      </ol>
+          <div class="process__body">
+            <h3>Организуем логистику</h3>
+            <p>Консолидация, упаковка и доставка.</p>
+          </div>
+        </article>
+        <article class="process__card reveal">
+          <div class="process__media">
+            <img src="assets/process/06-finished-project.png" alt="Готовый интерьер" loading="lazy">
+          </div>
+          <div class="process__body">
+            <h3>Готовый интерьер</h3>
+            <p>Результат соответствует проекту.</p>
+          </div>
+        </article>
+      </div>
+      <div class="process__finish reveal">
+        <span class="process__finish-icon" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#8D806F" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6l2.2 2.2 4.8-4.8"/></svg>
+        </span>
+        <span class="process__finish-text">Проект реализован</span>
+      </div>
     </div>
   </section>
 
-  <!-- 6. Для дизайнеров -->
+  <!-- 7. Реализованные проекты -->
+  <section class="projects" id="projects">
+    <div class="projects__spread">
+      <header class="projects__intro reveal">
+        <h2>Реализованные проекты</h2>
+        <p class="projects__lead">За последние годы мы помогли реализовать десятки проектов — от частных квартир до коммерческих интерьеров.</p>
+      </header>
+      <div class="projects__list">
+        <article class="projects__item reveal">
+          <hr class="projects__rule">
+          <figure class="projects__media">
+            <img src="assets/interior-styles/contemporary.jpeg" alt="Квартира в Москве, Contemporary" loading="lazy">
+          </figure>
+          <div class="projects__meta">
+            <p class="projects__location">Квартира • Москва</p>
+            <p class="projects__detail">180 м²</p>
+            <p class="projects__style">Contemporary</p>
+          </div>
+        </article>
+        <article class="projects__item reveal">
+          <hr class="projects__rule">
+          <figure class="projects__media">
+            <img src="assets/interior-styles/organic-modern.jpeg" alt="Дом в Санкт-Петербурге, Organic Modern" loading="lazy">
+          </figure>
+          <div class="projects__meta">
+            <p class="projects__location">Дом • Санкт-Петербург</p>
+            <p class="projects__detail">320 м²</p>
+            <p class="projects__style">Organic Modern</p>
+          </div>
+        </article>
+        <article class="projects__item reveal">
+          <hr class="projects__rule">
+          <figure class="projects__media">
+            <img src="assets/interior-styles/luxury.jpeg" alt="Пентхаус в Дубае, Luxury" loading="lazy">
+          </figure>
+          <div class="projects__meta">
+            <p class="projects__location">Пентхаус • Дубай</p>
+            <p class="projects__style">Luxury</p>
+          </div>
+        </article>
+        <hr class="projects__rule projects__rule--end">
+      </div>
+      <p class="projects__more reveal">
+        <a href="https://wa.me/79953441995" target="_blank" rel="noopener">Смотреть больше проектов →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. Для дизайнеров и архитекторов -->
   <section class="designers" id="designers">
-    <div class="designers__layout">
-      <div class="designers__copy reveal">
-        <p class="label label--light">For designers</p>
-        <h2>Для дизайнеров, архитекторов и&nbsp;комплектаторов</h2>
-        <p>Подбираем мебель и интерьерные решения под визуализации, чертежи и референсы. Помогаем найти аналоги европейских брендов, согласовать материалы и закрыть поставку через одного партнёра.</p>
-        <p class="designers__sub">Отправьте проект или подборку референсов — подготовим варианты фабрик, моделей и предварительный расчёт.</p>
-        <a class="btn btn--light" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">Написать в Telegram</a>
+    <div class="designers__spread">
+      <div class="designers__layout">
+        <figure class="designers__visual reveal">
+          <img src="assets/designers/designer-consultation.png" alt="Консультация для дизайнеров и архитекторов" loading="lazy">
+        </figure>
+        <div class="designers__side">
+          <header class="designers__header reveal">
+            <p class="label">For designers</p>
+            <h2>Для дизайнеров<br>и архитекторов</h2>
+            <p class="designers__lead">Мы берем на себя всю работу с Китаем — от поиска фабрик до контроля качества и доставки. Вы занимаетесь проектированием, мы отвечаем за комплектацию.</p>
+          </header>
+          <ul class="designers__benefits">
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v16H7z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+              <div class="designers__item-text">
+                <h3>Работаем по вашему проекту</h3>
+                <p>Подбираем фабрики строго по спецификации и визуализациям.</p>
+              </div>
+            </li>
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V11l4-2.5V21M7 21V8l5-3v16M12 21V5l5-2.5V21M3 21h18"/></svg>
+              <div class="designers__item-text">
+                <h3>Проверенные производители</h3>
+                <p>Только фабрики, проверенные на реализованных проектах.</p>
+              </div>
+            </li>
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3 3.4-5 7-5s6.2 2 7 5"/></svg>
+              <div class="designers__item-text">
+                <h3>Один контакт</h3>
+                <p>Берем на себя всю коммуникацию с производителями.</p>
+              </div>
+            </li>
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12v9M4 7.5L12 12l8-4.5"/></svg>
+              <div class="designers__item-text">
+                <h3>Полная комплектация</h3>
+                <p>Мебель, освещение, сантехника, двери, камень и декор.</p>
+              </div>
+            </li>
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.5"/><path d="M15 15l4.5 4.5"/></svg>
+              <div class="designers__item-text">
+                <h3>Контроль качества</h3>
+                <p>Фото- и видеоотчеты перед каждой отправкой.</p>
+              </div>
+            </li>
+            <li class="designers__item reveal">
+              <svg class="designers__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8D806F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18h16"/><path d="M6 18l1.5-7h9L18 18"/><path d="M9 11V8l3-2 3 2v3"/></svg>
+              <div class="designers__item-text">
+                <h3>Логистика под ключ</h3>
+                <p>Консолидация, экспорт и доставка до объекта.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="designers__visual reveal">
-        <img src="chairs-115.jpg" alt="Проект для дизайнеров" loading="lazy">
+      <hr class="designers__divider">
+      <div class="designers__cta reveal">
+        <div class="designers__cta-inner">
+          <h3 class="designers__cta-title">Обсудим ваш проект</h3>
+          <p class="designers__cta-text">Отправьте планировки, спецификации или визуализации.<br>Подготовим подбор фабрик и предварительный расчет стоимости.</p>
+          <a class="btn btn--dark designers__btn" href="https://wa.me/79953441995" target="_blank" rel="noopener">Обсудить проект</a>
+          <p class="designers__note">Сотрудничаем с дизайнерами, архитекторами и дизайн-студиями по всему миру, помогая реализовывать проекты любой сложности.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. Контакты -->
-  <section class="contacts" id="contacts">
-    <div class="wrap">
-      <div class="contacts__layout">
-        <header class="contacts__intro reveal">
-          <p class="label">Contacts</p>
-          <h2>Обсудим ваш проект</h2>
-          <p>Напишите, что нужно подобрать: категория, количество, стиль, размеры, материалы и город доставки.</p>
-        </header>
-        <div class="contacts__card reveal">
-          <h3>China Direct</h3>
-          <p>WhatsApp / телефон: +7 995 344-19-95<br>Telegram: @ChinaDirectIgor<br>Email: littlrdan1218@gmail.com</p>
-          <div class="contacts__actions">
-            <a href="https://wa.me/79953441995" target="_blank" rel="noopener">Написать в WhatsApp</a>
-            <a href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">Написать в Telegram</a>
-            <a href="mailto:littlrdan1218@gmail.com">Отправить Email</a>
+  <!-- 9. География поставок -->
+  <section class="geography" id="geography">
+    <div class="geography__spread">
+      <div class="geography__layout">
+        <div class="geography__map-col reveal">
+          <div class="geography__map-wrap">
+            <object class="geography__map" data="assets/geography/world-land.svg" type="image/svg+xml" aria-label="Карта географии поставок"></object>
           </div>
+        </div>
+        <div class="geography__content">
+          <p class="label reveal">Работаем по всему миру</p>
+          <h2 class="geography__title reveal">География поставок</h2>
+          <p class="geography__lead reveal">Организуем поставки мебели, освещения, сантехники, отделочных материалов и декора из Китая в любую точку мира.</p>
+          <div class="geography__cards">
+            <article class="geography__card reveal">
+              <h3 class="geography__card-title">🇷🇺 Россия</h3>
+              <ul class="geography__cities">
+                <li>Москва</li>
+                <li>Санкт-Петербург</li>
+                <li>Казань</li>
+                <li>Екатеринбург</li>
+                <li>Сочи</li>
+              </ul>
+            </article>
+            <article class="geography__card reveal">
+              <h3 class="geography__card-title">🇺🇸 США</h3>
+              <ul class="geography__cities">
+                <li>Нью-Йорк</li>
+                <li>Майами</li>
+                <li>Лос-Анджелес</li>
+              </ul>
+            </article>
+            <article class="geography__card reveal">
+              <h3 class="geography__card-title">🇦🇪 ОАЭ</h3>
+              <ul class="geography__cities">
+                <li>Дубай</li>
+                <li>Абу-Даби</li>
+              </ul>
+            </article>
+            <article class="geography__card reveal">
+              <h3 class="geography__card-title">🇪🇺 Европа</h3>
+              <ul class="geography__cities">
+                <li>Испания</li>
+                <li>Франция</li>
+                <li>Италия</li>
+                <li>Германия</li>
+              </ul>
+            </article>
+          </div>
+          <div class="geography__accent reveal">
+            <p class="geography__accent-title">От Китая до вашего объекта</p>
+            <p class="geography__accent-text">Берем на себя весь путь — от фабрики до финальной доставки.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Финальный CTA -->
+  <section class="discuss" id="contacts">
+    <div class="discuss__spread">
+      <div class="discuss__panel reveal">
+        <div class="discuss__main">
+          <h2 class="discuss__title">Давайте обсудим ваш проект</h2>
+          <p class="discuss__lead">Отправьте планировки, визуализации, спецификацию или просто референсы — подготовим подбор фабрик и предварительный расчет стоимости.</p>
+          <a class="btn btn--dark discuss__btn" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">Обсудить проект</a>
+          <p class="discuss__note">Ответим, уточним детали и предложим следующий шаг.</p>
+        </div>
+        <div class="discuss__aside">
+          <ul class="discuss__list">
+            <li class="discuss__item">
+              <span class="discuss__label">Telegram</span>
+              <a class="discuss__value" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">@ChinaDirectIgor</a>
+            </li>
+            <li class="discuss__item">
+              <span class="discuss__label">WhatsApp</span>
+              <a class="discuss__value" href="https://wa.me/" target="_blank" rel="noopener">+86 XXX XXX XXXX</a>
+            </li>
+            <li class="discuss__item">
+              <span class="discuss__label">Email</span>
+              <a class="discuss__value" href="mailto:your@email.com">your@email.com</a>
+            </li>
+            <li class="discuss__item">
+              <span class="discuss__label">Location</span>
+              <span class="discuss__value discuss__value--plain">Guangzhou, China</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -272,10 +524,25 @@
 </main>
 
 <footer class="site-footer">
-  <span>China Direct · Комплектация интерьеров из Китая</span>
-  <span>Россия · Беларусь</span>
+  <div class="site-footer__spread">
+    <div class="site-footer__layout">
+      <div class="site-footer__brand">
+        <p class="site-footer__name">China Direct</p>
+        <p class="site-footer__tagline">Комплектация интерьеров<br>из Китая по всему миру.</p>
+        <p class="site-footer__copy">© 2026 China Direct</p>
+      </div>
+      <div class="site-footer__aside">
+        <nav class="site-footer__nav" aria-label="Контакты">
+          <a href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:your@email.com">Email</a>
+        </nav>
+        <p class="site-footer__location">Guangzhou, China</p>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script-v2.js"></script>
 </body>
 </html>
