@@ -446,9 +446,9 @@ h3 {
 
 .about__layout {
   display: grid;
-  grid-template-columns: minmax(0, 42fr) minmax(0, 58fr);
-  gap: clamp(56px, 7vw, 88px);
-  align-items: center;
+  grid-template-columns: minmax(0, 54fr) minmax(0, 46fr);
+  gap: clamp(32px, 4vw, 52px);
+  align-items: start;
 }
 
 .about__body {
@@ -457,7 +457,7 @@ h3 {
 
 .about__title {
   margin: 0;
-  max-width: 420px;
+  max-width: 560px;
   font-family: var(--serif);
   font-size: clamp(36px, 3.8vw, 52px);
   font-weight: 400;
@@ -466,8 +466,68 @@ h3 {
   color: var(--ink);
 }
 
+.about__text {
+  margin-top: clamp(48px, 5.5vw, 64px);
+  max-width: 560px;
+}
+
+.about__text p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #666;
+}
+
+.about__text p + p {
+  margin-top: clamp(24px, 2.8vw, 32px);
+}
+
+.about__location {
+  margin: clamp(48px, 5.5vw, 64px) 0 0;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.about__divider {
+  width: 120px;
+  margin-top: clamp(48px, 5.5vw, 64px);
+  height: 1px;
+  background: rgba(24, 23, 22, 0.1);
+}
+
+.about__stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(14px, 1.8vw, 24px);
+  margin: clamp(40px, 4.5vw, 56px) 0 0;
+  max-width: 560px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+.about__stats-sep {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(24, 23, 22, 0.18);
+  user-select: none;
+}
+
 .about__visual {
   margin: 0;
+  width: 88%;
+  justify-self: end;
+  align-self: start;
   border-radius: var(--radius);
   overflow: hidden;
   background: #ebe7e1;
@@ -477,7 +537,7 @@ h3 {
   display: block;
   width: 100%;
   height: auto;
-  min-height: clamp(420px, 44vw, 580px);
+  min-height: clamp(370px, 39vw, 510px);
   object-fit: cover;
   object-position: center;
 }
@@ -2017,6 +2077,25 @@ a.discuss__value:hover {
 
   .about__title {
     max-width: none;
+  }
+
+  .about__text {
+    max-width: none;
+  }
+
+  .about__text p {
+    font-size: 17px;
+  }
+
+  .about__stats {
+    max-width: none;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .about__visual {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .about__visual img {
