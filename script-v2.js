@@ -101,4 +101,120 @@
   } else {
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
+
+  const galleryEl = document.getElementById('project-gallery');
+  if (galleryEl) {
+    const galleryTitle = galleryEl.querySelector('.project-gallery__title');
+    const galleryLocation = galleryEl.querySelector('.project-gallery__location');
+    const galleryImg = galleryEl.querySelector('.project-gallery__img');
+    const galleryCurrent = galleryEl.querySelector('[data-gallery-current]');
+    const galleryTotal = galleryEl.querySelector('[data-gallery-total]');
+    const prevBtn = galleryEl.querySelector('[data-gallery-prev]');
+    const nextBtn = galleryEl.querySelector('[data-gallery-next]');
+    const closeEls = galleryEl.querySelectorAll('[data-close-gallery]');
+    const projectItems = document.querySelectorAll('.projects__item[data-project]');
+
+    let activeImages = [];
+    let activeIndex = 0;
+    let activeTitle = '';
+    let lastFocus = null;
+
+    function buildImageList(item) {
+      const id = item.dataset.project;
+      const numberedCount = Math.min(11, Number(item.dataset.galleryCount || 0));
+      const images = ['cover.jpg'];
+      for (let i = 1; i <= numberedCount; i += 1) {
+        images.push(`${String(i).padStart(2, '0')}.jpg`);
+      }
+      return images.map((file) => `assets/projects/project-${id}/${file}`);
+    }
+
+    function updateGallerySlide() {
+      if (!activeImages.length) return;
+      const src = activeImages[activeIndex];
+      galleryImg.src = src;
+      galleryImg.alt = `${activeTitle} — фото ${activeIndex + 1}`;
+      galleryCurrent.textContent = String(activeIndex + 1);
+      galleryTotal.textContent = String(activeImages.length);
+      prevBtn.disabled = activeIndex === 0;
+      nextBtn.disabled = activeIndex === activeImages.length - 1;
+    }
+
+    function openGallery(item) {
+      const titleEl = item.querySelector('.projects__location');
+      const locationEl = item.querySelector('.projects__detail');
+      activeTitle = titleEl?.textContent?.trim() || '';
+      const location = locationEl?.textContent?.trim() || '';
+      activeImages = buildImageList(item);
+      activeIndex = 0;
+
+      galleryTitle.textContent = activeTitle;
+      galleryLocation.textContent = location;
+      updateGallerySlide();
+
+      galleryEl.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => galleryEl.classList.add('is-open'));
+      document.body.style.overflow = 'hidden';
+      galleryEl.querySelector('.project-gallery__close')?.focus();
+    }
+
+    function closeGallery() {
+      galleryEl.classList.remove('is-open');
+      galleryEl.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      galleryImg.removeAttribute('src');
+      lastFocus?.focus();
+    }
+
+    function showNext() {
+      if (activeIndex < activeImages.length - 1) {
+        activeIndex += 1;
+        updateGallerySlide();
+      }
+    }
+
+    function showPrev() {
+      if (activeIndex > 0) {
+        activeIndex -= 1;
+        updateGallerySlide();
+      }
+    }
+
+    projectItems.forEach((item) => {
+      const openBtn = item.querySelector('[data-open-project]');
+      const media = item.querySelector('.projects__media');
+
+      openBtn?.addEventListener('click', () => {
+        lastFocus = openBtn;
+        openGallery(item);
+      });
+
+      media?.addEventListener('click', () => {
+        lastFocus = media;
+        openGallery(item);
+      });
+
+      media?.setAttribute('role', 'button');
+      media?.setAttribute('tabindex', '0');
+      media?.setAttribute('aria-label', `Смотреть проект: ${item.querySelector('.projects__location')?.textContent?.trim() || ''}`);
+      media?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          lastFocus = media;
+          openGallery(item);
+        }
+      });
+    });
+
+    nextBtn?.addEventListener('click', showNext);
+    prevBtn?.addEventListener('click', showPrev);
+    closeEls.forEach((el) => el.addEventListener('click', closeGallery));
+
+    document.addEventListener('keydown', (e) => {
+      if (!galleryEl.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeGallery();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+  }
 })();
