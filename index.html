@@ -74,7 +74,7 @@
       <h1 class="hero__title">Комплектация<br>интерьеров<br>из Китая</h1>
       <p class="hero__lead">Мебель. Свет. Кухни. Камень. Сантехника.<br>Полное сопровождение проекта от фабрики до объекта.</p>
       <div class="hero__actions">
-        <a class="btn btn--dark hero__btn" href="https://wa.me/79953441995" target="_blank" rel="noopener">Получить консультацию</a>
+        <button type="button" class="btn btn--dark hero__btn" data-open-contact>Получить консультацию</button>
         <a class="btn btn--line hero__btn" href="#projects">Наши проекты</a>
       </div>
     </div>
@@ -524,7 +524,7 @@
         <div class="designers__cta-inner">
           <h3 class="designers__cta-title">Обсудим ваш проект</h3>
           <p class="designers__cta-text">Отправьте планировки, спецификации или визуализации.<br>Подготовим подбор фабрик и предварительный расчет стоимости.</p>
-          <a class="btn btn--dark designers__btn" href="https://wa.me/79953441995" target="_blank" rel="noopener">Обсудить проект</a>
+          <button type="button" class="btn btn--dark designers__btn" data-open-contact>Обсудить проект</button>
           <p class="designers__note">Сотрудничаем с дизайнерами, архитекторами и дизайн-студиями по всему миру, помогая реализовывать проекты любой сложности.</p>
         </div>
       </div>
@@ -596,7 +596,7 @@
         <div class="discuss__main">
           <h2 class="discuss__title">Давайте обсудим ваш проект</h2>
           <p class="discuss__lead">Отправьте планировки, визуализации, спецификацию или просто референсы — подготовим подбор фабрик и предварительный расчет стоимости.</p>
-          <a class="btn btn--dark discuss__btn" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">Обсудить проект</a>
+          <button type="button" class="btn btn--dark discuss__btn" data-open-contact>Обсудить проект</button>
           <p class="discuss__note">Ответим, уточним детали и предложим следующий шаг.</p>
         </div>
         <div class="discuss__aside">
@@ -675,6 +675,39 @@
     </div>
   </div>
 </footer>
+
+<div class="contact-modal" id="contact-modal" aria-hidden="true">
+  <div class="contact-modal__backdrop" data-close-contact></div>
+  <div class="contact-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <button type="button" class="contact-modal__close" data-close-contact aria-label="Закрыть">
+      <span aria-hidden="true">×</span>
+    </button>
+    <header class="contact-modal__header">
+      <h2 class="contact-modal__title" id="contact-modal-title">Как вам удобнее связаться?</h2>
+      <p class="contact-modal__lead">Выберите удобный способ — ответим и обсудим ваш проект.</p>
+    </header>
+    <ul class="contact-modal__options">
+      <li>
+        <a class="contact-modal__option" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">
+          <span class="contact-modal__option-label">Telegram</span>
+          <span class="contact-modal__option-value">@ChinaDirectIgor</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-modal__option" href="https://wa.me/79953441995" target="_blank" rel="noopener">
+          <span class="contact-modal__option-label">WhatsApp</span>
+          <span class="contact-modal__option-value">+7 995 344 1995</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-modal__option" href="mailto:info@chinadirect.pro">
+          <span class="contact-modal__option-label">Email</span>
+          <span class="contact-modal__option-value">info@chinadirect.pro</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div class="project-gallery" id="project-gallery" aria-hidden="true">
   <div class="project-gallery__backdrop" data-close-gallery></div>
