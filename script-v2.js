@@ -217,4 +217,68 @@
       if (e.key === 'ArrowLeft') showPrev();
     });
   }
+
+  const contactModal = document.getElementById('contact-modal');
+  if (contactModal) {
+    const contactDialog = contactModal.querySelector('.contact-modal__dialog');
+    const contactCloseEls = contactModal.querySelectorAll('[data-close-contact]');
+    const contactTriggers = document.querySelectorAll('[data-open-contact]');
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    let contactLastFocus = null;
+
+    function getFocusableElements(container) {
+      return Array.from(container.querySelectorAll(focusableSelector)).filter((el) => {
+        return el.offsetParent !== null || el === document.activeElement;
+      });
+    }
+
+    function trapContactFocus(e) {
+      if (!contactModal.classList.contains('is-open') || e.key !== 'Tab' || !contactDialog) return;
+
+      const focusable = getFocusableElements(contactDialog);
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+
+    function openContactModal(trigger) {
+      contactLastFocus = trigger;
+      contactModal.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(() => contactModal.classList.add('is-open'));
+      document.body.style.overflow = 'hidden';
+      contactModal.querySelector('.contact-modal__close')?.focus();
+    }
+
+    function closeContactModal() {
+      contactModal.classList.remove('is-open');
+      contactModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      contactLastFocus?.focus();
+    }
+
+    contactTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => openContactModal(trigger));
+    });
+
+    contactCloseEls.forEach((el) => {
+      el.addEventListener('click', closeContactModal);
+    });
+
+    contactDialog?.addEventListener('keydown', trapContactFocus);
+
+    document.addEventListener('keydown', (e) => {
+      if (!contactModal.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeContactModal();
+    });
+  }
 })();
