@@ -1269,7 +1269,7 @@ button.btn {
   display: grid;
   grid-template-columns: 58fr clamp(40px, 4.5vw, 50px) 1px clamp(40px, 4.5vw, 50px) 42fr;
   column-gap: 0;
-  align-items: start;
+  align-items: stretch;
 }
 
 .designers__layout::before {
@@ -1277,15 +1277,14 @@ button.btn {
   grid-column: 3;
   grid-row: 1;
   width: 1px;
-  height: 80%;
-  align-self: center;
+  align-self: stretch;
   background: #E7E1D9;
 }
 
 .designers__visual {
   grid-column: 1;
   margin: 0;
-  height: clamp(780px, 58vw, 840px);
+  min-height: 100%;
   border-radius: var(--radius);
   overflow: hidden;
 }
