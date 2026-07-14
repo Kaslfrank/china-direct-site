@@ -1440,46 +1440,46 @@ button.btn {
   transform: translateY(var(--lift));
 }
 
-/* ── China service ── */
-.china-service {
+/* ── Trust ── */
+.trust {
   padding-block: var(--space-section);
   background: var(--canvas);
 }
 
-.china-service__spread {
+.trust__spread {
   width: var(--spread);
   margin-inline: auto;
 }
 
-.china-service__intro {
+.trust__intro {
   max-width: 760px;
   margin-bottom: clamp(72px, 9vw, 112px);
 }
 
-.china-service__intro h2 {
+.trust__intro h2 {
   margin: 0;
   font-size: clamp(34px, 4.2vw, 52px);
   line-height: 1.08;
   letter-spacing: -0.03em;
 }
 
-.china-service__lead {
+.trust__lead {
   margin: var(--space-title-text) 0 0;
-  max-width: 620px;
+  max-width: 680px;
   font-size: clamp(15px, 1.3vw, 17px);
   font-weight: 300;
   line-height: 1.75;
   color: var(--ink-soft);
 }
 
-.china-service__grid {
+.trust__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(24px, 2.5vw, 32px);
   align-items: stretch;
 }
 
-.china-service__card {
+.trust__card {
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -1493,13 +1493,13 @@ button.btn {
     border-color var(--dur) var(--ease);
 }
 
-.china-service__card:hover {
+.trust__card:hover {
   transform: translateY(var(--lift));
   border-color: rgba(141, 128, 111, 0.28);
   box-shadow: var(--shadow-hover);
 }
 
-.china-service__icon-wrap {
+.trust__icon-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1515,19 +1515,19 @@ button.btn {
     transform var(--dur) var(--ease-out);
 }
 
-.china-service__card:hover .china-service__icon-wrap {
+.trust__card:hover .trust__icon-wrap {
   border-color: rgba(141, 128, 111, 0.45);
   color: var(--ink);
   transform: translateY(-2px);
 }
 
-.china-service__icon {
+.trust__icon {
   display: block;
   width: 24px;
   height: 24px;
 }
 
-.china-service__card h3 {
+.trust__card h3 {
   margin: 0 0 clamp(14px, 1.8vw, 18px);
   font-family: var(--serif);
   font-size: clamp(22px, 2vw, 26px);
@@ -1537,7 +1537,7 @@ button.btn {
   color: var(--ink);
 }
 
-.china-service__card p {
+.trust__card p {
   margin: 0;
   font-size: clamp(14px, 1.1vw, 15px);
   font-weight: 300;
@@ -2484,15 +2484,15 @@ a.discuss__value:hover {
 .process__card:nth-child(5) { transition-delay: 0.32s; }
 .process__card:nth-child(6) { transition-delay: 0.4s; }
 
-.china-service__card:nth-child(2) { transition-delay: 0.06s; }
-.china-service__card:nth-child(3) { transition-delay: 0.12s; }
-.china-service__card:nth-child(4) { transition-delay: 0.18s; }
-.china-service__card:nth-child(5) { transition-delay: 0.24s; }
-.china-service__card:nth-child(6) { transition-delay: 0.3s; }
+.trust__card:nth-child(2) { transition-delay: 0.06s; }
+.trust__card:nth-child(3) { transition-delay: 0.12s; }
+.trust__card:nth-child(4) { transition-delay: 0.18s; }
+.trust__card:nth-child(5) { transition-delay: 0.24s; }
+.trust__card:nth-child(6) { transition-delay: 0.3s; }
 
 /* ── Responsive ── */
 @media (max-width: 1100px) {
-  .china-service__grid {
+  .trust__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2800,7 +2800,7 @@ a.discuss__value:hover {
     padding-block: clamp(88px, 14vw, 120px);
   }
 
-  .china-service__grid,
+  .trust__grid,
   .catalog__grid {
     grid-template-columns: 1fr;
   }
