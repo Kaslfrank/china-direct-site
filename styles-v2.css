@@ -1106,10 +1106,9 @@ button.btn {
 }
 
 .process__grid {
-  --process-gap: clamp(12px, 1.1vw, 16px);
-  --process-photo-ratio: 58%;
+  --process-gap: clamp(16px, 2vw, 24px);
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--process-gap);
 }
 
@@ -1117,11 +1116,11 @@ button.btn {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: clamp(372px, 32vw, 408px);
+  height: auto;
   background: var(--surface);
   border: var(--border);
   border-radius: 18px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: var(--shadow-rest);
   transition:
     transform var(--dur) var(--ease),
@@ -1129,31 +1128,9 @@ button.btn {
     border-color var(--dur) var(--ease);
 }
 
-.process__card:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: calc(var(--process-photo-ratio) / 2);
-  left: calc(100% + 2px);
-  width: calc(var(--process-gap) - 6px);
-  height: 1px;
-  background: rgba(214, 195, 170, 0.28);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.process__card:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: calc(var(--process-photo-ratio) / 2);
-  left: calc(100% + var(--process-gap) - 4px);
-  width: 3px;
-  height: 3px;
-  border-right: 1px solid rgba(214, 195, 170, 0.28);
-  border-bottom: 1px solid rgba(214, 195, 170, 0.28);
-  transform: translateY(-50%) rotate(-45deg);
-  pointer-events: none;
+.process__card::before,
+.process__card::after {
+  display: none;
 }
 
 .process__card:hover {
@@ -1163,8 +1140,9 @@ button.btn {
 }
 
 .process__media {
-  flex: 0 0 var(--process-photo-ratio);
-  min-height: 0;
+  flex: none;
+  aspect-ratio: 4 / 3;
+  width: 100%;
   overflow: hidden;
   border-radius: 18px 18px 0 0;
   background: #ebe7e1;
@@ -2502,19 +2480,6 @@ a.discuss__value:hover {
   .trust__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .process__grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .process__card::before,
-  .process__card::after {
-    display: none;
-  }
-
-  .process__card {
-    height: clamp(360px, 42vw, 400px);
-  }
 }
 
 @media (max-width: 960px) {
@@ -2690,12 +2655,8 @@ a.discuss__value:hover {
   }
 
   .process__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(16px, 2vw, 20px);
-  }
-
-  .process__card {
-    height: clamp(360px, 50vw, 400px);
   }
 
   .designers__layout {
