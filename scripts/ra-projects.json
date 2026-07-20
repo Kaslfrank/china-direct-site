@@ -1,0 +1,12 @@
+[
+  { "num": "01", "slug": "proj01", "title": "Загородный дом в Подмосковье", "location": "Дом • Подмосковье", "url": "https://ra-designe.ru/proj01" },
+  { "num": "02", "slug": "proj02", "title": "Двухэтажный дом на Новой Риге", "location": "Дом • Новая Рига", "url": "https://ra-designe.ru/proj02" },
+  { "num": "03", "slug": "proj03", "title": "Однокомнатная квартира ЖК Слава", "location": "Квартира • ЖК Слава", "url": "https://ra-designe.ru/proj03" },
+  { "num": "04", "slug": "proj04", "title": "Дом с бассейном", "location": "Дом", "url": "https://ra-designe.ru/proj04" },
+  { "num": "05", "slug": "proj05", "title": "Дом в Подмосковье", "location": "Дом • Подмосковье", "url": "https://ra-designe.ru/proj05" },
+  { "num": "06", "slug": "proj06", "title": "Трехкомнатная квартира в Москве", "location": "Квартира • Москва", "url": "https://ra-designe.ru/proj06" },
+  { "num": "07", "slug": "proj08", "title": "Квартира в Сколково", "location": "Квартира • Сколково", "url": "https://ra-designe.ru/proj08" },
+  { "num": "08", "slug": "proj09", "title": "Современный дом на Новой Риге", "location": "Дом • Новая Рига", "url": "https://ra-designe.ru/proj09" },
+  { "num": "09", "slug": "proj10", "title": "Квартира в Французском стиле", "location": "Квартира", "url": "https://ra-designe.ru/proj10" },
+  { "num": "10", "slug": "proj12", "title": "Дом в Иваново", "location": "Дом • Иваново", "url": "https://ra-designe.ru/proj12" }
+]
