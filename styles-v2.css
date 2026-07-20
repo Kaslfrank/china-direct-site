@@ -1106,8 +1106,8 @@ button.btn {
 }
 
 .process__grid {
-  --process-gap: clamp(10px, 0.95vw, 14px);
-  --process-photo-ratio: 70%;
+  --process-gap: clamp(12px, 1.1vw, 16px);
+  --process-photo-ratio: 58%;
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: var(--process-gap);
@@ -1117,10 +1117,10 @@ button.btn {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: clamp(420px, 36vw, 480px);
+  height: clamp(372px, 32vw, 408px);
   background: var(--surface);
   border: var(--border);
-  border-radius: var(--radius);
+  border-radius: 18px;
   overflow: visible;
   box-shadow: var(--shadow-rest);
   transition:
@@ -1166,7 +1166,7 @@ button.btn {
   flex: 0 0 var(--process-photo-ratio);
   min-height: 0;
   overflow: hidden;
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-radius: 18px 18px 0 0;
   background: #ebe7e1;
 }
 
@@ -1175,8 +1175,16 @@ button.btn {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: transform var(--dur-slow) var(--ease-out);
 }
+
+.process__card:nth-child(1) .process__media img { object-position: 42% center; }
+.process__card:nth-child(2) .process__media img { object-position: center 52%; }
+.process__card:nth-child(3) .process__media img { object-position: center center; }
+.process__card:nth-child(4) .process__media img { object-position: 58% 48%; }
+.process__card:nth-child(5) .process__media img { object-position: 52% center; }
+.process__card:nth-child(6) .process__media img { object-position: center 42%; }
 
 .process__card:hover .process__media img {
   transform: scale(var(--scale-img));
@@ -2505,7 +2513,7 @@ a.discuss__value:hover {
   }
 
   .process__card {
-    height: clamp(380px, 44vw, 420px);
+    height: clamp(360px, 42vw, 400px);
   }
 }
 
