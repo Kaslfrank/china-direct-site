@@ -281,4 +281,63 @@
       if (e.key === 'Escape') closeContactModal();
     });
   }
+
+  const faqItems = Array.from(document.querySelectorAll('.faq__item'));
+  if (faqItems.length) {
+    const faqTriggers = faqItems.map((item) => item.querySelector('.faq__trigger'));
+
+    function closeFaqItem(item) {
+      const trigger = item.querySelector('.faq__trigger');
+      const panel = item.querySelector('.faq__panel');
+      item.classList.remove('is-open');
+      trigger?.setAttribute('aria-expanded', 'false');
+      panel?.setAttribute('hidden', '');
+    }
+
+    function openFaqItem(item) {
+      const trigger = item.querySelector('.faq__trigger');
+      const panel = item.querySelector('.faq__panel');
+      item.classList.add('is-open');
+      trigger?.setAttribute('aria-expanded', 'true');
+      panel?.removeAttribute('hidden');
+    }
+
+    function toggleFaqItem(item) {
+      const isOpen = item.classList.contains('is-open');
+      faqItems.forEach((other) => {
+        if (other !== item) closeFaqItem(other);
+      });
+      if (isOpen) {
+        closeFaqItem(item);
+      } else {
+        openFaqItem(item);
+      }
+    }
+
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector('.faq__trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', () => toggleFaqItem(item));
+
+      trigger.addEventListener('keydown', (e) => {
+        const index = faqTriggers.indexOf(trigger);
+        if (index === -1) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          faqTriggers[(index + 1) % faqTriggers.length]?.focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          faqTriggers[(index - 1 + faqTriggers.length) % faqTriggers.length]?.focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          faqTriggers[0]?.focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          faqTriggers[faqTriggers.length - 1]?.focus();
+        }
+      });
+    });
+  }
 })();
