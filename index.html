@@ -596,15 +596,16 @@
     .faq__trigger:hover { color: #5c5854; }
     .faq__trigger:focus-visible { outline: 2px solid rgba(141, 128, 111, 0.45); outline-offset: 4px; }
     .faq__question { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(20px, 1.85vw, 26px); font-weight: 400; letter-spacing: -0.02em; line-height: 1.25; }
-    .faq__icon { position: relative; flex-shrink: 0; width: 14px; height: 14px; }
+    .faq__icon { position: relative; flex-shrink: 0; width: 14px; height: 14px; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
     .faq__icon::before, .faq__icon::after { content: ""; position: absolute; top: 50%; left: 50%; background: #9a9590; transform: translate(-50%, -50%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
     .faq__icon::before { width: 14px; height: 1px; }
     .faq__icon::after { width: 1px; height: 14px; }
-    .faq__item.is-open .faq__icon::after { transform: translate(-50%, -50%) scaleY(0); opacity: 0; }
+    .faq__item.is-open .faq__icon { transform: rotate(45deg); }
     .faq__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
     .faq__item.is-open .faq__panel { grid-template-rows: 1fr; }
     .faq__panel-inner { overflow: hidden; }
-    .faq__answer { margin: 0; max-width: 72ch; padding-bottom: clamp(22px, 2.8vw, 30px); font-size: clamp(15px, 1.2vw, 16px); font-weight: 300; line-height: 1.75; color: #5c5854; }
+    .faq__answer { margin: 0; max-width: 72ch; padding-bottom: clamp(22px, 2.8vw, 30px); font-size: clamp(15px, 1.2vw, 16px); font-weight: 300; line-height: 1.75; color: #5c5854; opacity: 0; transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+    .faq__item.is-open .faq__answer { opacity: 1; }
   </style>
 
   <!-- FAQ -->
@@ -618,13 +619,13 @@
         <article class="faq__item">
           <h3 class="faq__heading">
             <button type="button" class="faq__trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
-              <span class="faq__question">Можно ли заказать только мебель?</span>
+              <span class="faq__question">Работаете ли вы с частными клиентами или только с дизайнерами?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="faq__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Да. Мы комплектуем как целые интерьерные проекты, так и отдельные категории — мебель, свет, сантехнику, камень и отделочные материалы. Можно начать с одной позиции или комнаты.</p>
+              <p class="faq__answer">Да. Мы работаем с дизайнерами, архитекторами, комплектаторами и частными клиентами. Можно обратиться как с готовым проектом, так и с отдельным запросом на мебель, свет, сантехнику, отделочные материалы или декор.</p>
             </div>
           </div>
         </article>
@@ -637,33 +638,33 @@
           </h3>
           <div class="faq__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Да. Мы сотрудничаем с дизайнерами, архитекторами и дизайн-студиями по всему миру. Берём на себя работу с фабриками, переговоры, контроль качества, выкуп и доставку — вы сосредотачиваетесь на проекте.</p>
+              <p class="faq__answer">Да. Мы подбираем производителей под проект, согласовываем материалы и образцы, контролируем производство и качество, а также организуем доставку.</p>
             </div>
           </div>
         </article>
         <article class="faq__item">
           <h3 class="faq__heading">
             <button type="button" class="faq__trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
-              <span class="faq__question">Можно ли заказать производство по индивидуальному проекту?</span>
+              <span class="faq__question">Можно ли изготовить мебель по индивидуальному проекту?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="faq__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Да. Производим мебель, кухни, встроенные решения и другие изделия по вашим чертежам, размерам и спецификации. Подбираем фабрику под задачу, согласовываем материалы и контролируем изготовление.</p>
+              <p class="faq__answer">Да. Многие фабрики производят изделия по индивидуальным размерам, чертежам, материалам и цветам. Мы сопровождаем согласование всех деталей с производителем.</p>
             </div>
           </div>
         </article>
         <article class="faq__item">
           <h3 class="faq__heading">
             <button type="button" class="faq__trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
-              <span class="faq__question">Как происходит контроль качества?</span>
+              <span class="faq__question">Как вы контролируете качество?</span>
               <span class="faq__icon" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="faq__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Проверяем изделия на фабрике перед отправкой: внешний вид, размеры, материалы, комплектацию и упаковку. По запросу предоставляем фото- и видеоотчёт до отгрузки.</p>
+              <p class="faq__answer">Перед отправкой проверяем внешний вид, размеры, материалы, комплектацию и упаковку. При необходимости предоставляем фото- и видеоотчёты до отгрузки.</p>
             </div>
           </div>
         </article>
@@ -676,7 +677,7 @@
           </h3>
           <div class="faq__panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Консолидируем груз на складе в Китае, оформляем экспорт и организуем доставку до вашего города или объекта. Подбираем оптимальный маршрут и способ перевозки под состав заказа.</p>
+              <p class="faq__answer">Мы организуем консолидацию товаров от разных фабрик, дополнительную упаковку, оформление документов и доставку до согласованного города или объекта.</p>
             </div>
           </div>
         </article>
@@ -689,55 +690,13 @@
           </h3>
           <div class="faq__panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" hidden>
             <div class="faq__panel-inner">
-              <p class="faq__answer">Срок зависит от состава заказа, сроков производства на фабриках и направления доставки. После получения спецификации мы даём ориентировочный график — от подбора до прибытия на объект.</p>
+              <p class="faq__answer">Срок зависит от объёма заказа, сложности изделий и сроков производства фабрик. После получения спецификации мы рассчитываем ориентировочный график производства и доставки.</p>
             </div>
           </div>
         </article>
       </div>
     </div>
   </section>
-
-  <script>
-    (function () {
-      var items = Array.prototype.slice.call(document.querySelectorAll('.faq__item'));
-      if (!items.length) return;
-
-      function closeItem(item) {
-        var trigger = item.querySelector('.faq__trigger');
-        var panel = item.querySelector('.faq__panel');
-        item.classList.remove('is-open');
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
-        if (panel) panel.setAttribute('hidden', '');
-      }
-
-      function openItem(item) {
-        var trigger = item.querySelector('.faq__trigger');
-        var panel = item.querySelector('.faq__panel');
-        item.classList.add('is-open');
-        if (trigger) trigger.setAttribute('aria-expanded', 'true');
-        if (panel) panel.removeAttribute('hidden');
-      }
-
-      items.forEach(function (item) {
-        var trigger = item.querySelector('.faq__trigger');
-        if (!trigger) return;
-
-        trigger.addEventListener('click', function () {
-          var isOpen = item.classList.contains('is-open');
-          items.forEach(function (other) {
-            if (other !== item) closeItem(other);
-          });
-          if (isOpen) closeItem(item);
-          else openItem(item);
-        });
-      });
-
-      if (location.hash === '#faq') {
-        var faq = document.getElementById('faq');
-        if (faq) faq.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    })();
-  </script>
 
   <!-- 10. Финальный CTA -->
   <section class="discuss" id="contacts">
