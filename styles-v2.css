@@ -2263,6 +2263,7 @@ button.btn {
   flex-shrink: 0;
   width: 14px;
   height: 14px;
+  transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .faq__icon::before,
@@ -2288,9 +2289,8 @@ button.btn {
   height: 14px;
 }
 
-.faq__item.is-open .faq__icon::after {
-  transform: translate(-50%, -50%) scaleY(0);
-  opacity: 0;
+.faq__item.is-open .faq__icon {
+  transform: rotate(45deg);
 }
 
 .faq__panel {
@@ -2315,6 +2315,12 @@ button.btn {
   font-weight: 300;
   line-height: 1.75;
   color: var(--ink-soft);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.faq__item.is-open .faq__answer {
+  opacity: 1;
 }
 
 .faq__item:nth-child(2) { transition-delay: 0.06s; }

@@ -282,31 +282,65 @@
     });
   }
 
-  const faqItems = Array.from(document.querySelectorAll('.faq__item'));
-  if (faqItems.length) {
+  function initFaqAccordion() {
+    const faqItems = Array.from(document.querySelectorAll('.faq__item'));
+    if (!faqItems.length) return;
+
     const faqTriggers = faqItems.map((item) => item.querySelector('.faq__trigger'));
+    const panelTransitionMs = 600;
+    const hideTimers = new WeakMap();
+
+    function scheduleHidden(item, panel) {
+      if (!panel) return;
+      const existing = hideTimers.get(panel);
+      if (existing) window.clearTimeout(existing);
+      hideTimers.set(
+        panel,
+        window.setTimeout(() => {
+          hideTimers.delete(panel);
+          if (!item.classList.contains('is-open')) {
+            panel.setAttribute('hidden', '');
+          }
+        }, panelTransitionMs)
+      );
+    }
 
     function closeFaqItem(item) {
       const trigger = item.querySelector('.faq__trigger');
       const panel = item.querySelector('.faq__panel');
+      if (!item.classList.contains('is-open')) return;
+
       item.classList.remove('is-open');
       trigger?.setAttribute('aria-expanded', 'false');
-      panel?.setAttribute('hidden', '');
+      scheduleHidden(item, panel);
     }
 
     function openFaqItem(item) {
       const trigger = item.querySelector('.faq__trigger');
       const panel = item.querySelector('.faq__panel');
+      if (!panel) return;
+
+      const pendingHide = hideTimers.get(panel);
+      if (pendingHide) {
+        window.clearTimeout(pendingHide);
+        hideTimers.delete(panel);
+      }
+
+      panel.removeAttribute('hidden');
+      void panel.offsetHeight;
       item.classList.add('is-open');
       trigger?.setAttribute('aria-expanded', 'true');
-      panel?.removeAttribute('hidden');
     }
 
     function toggleFaqItem(item) {
       const isOpen = item.classList.contains('is-open');
+
       faqItems.forEach((other) => {
-        if (other !== item) closeFaqItem(other);
+        if (other !== item && other.classList.contains('is-open')) {
+          closeFaqItem(other);
+        }
       });
+
       if (isOpen) {
         closeFaqItem(item);
       } else {
@@ -339,5 +373,15 @@
         }
       });
     });
+
+    if (location.hash === '#faq') {
+      document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFaqAccordion);
+  } else {
+    initFaqAccordion();
   }
 })();
