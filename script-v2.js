@@ -400,4 +400,59 @@
   } else {
     initFaqAccordion();
   }
+
+  const METRIKA_COUNTER_ID = 110906864;
+
+  function reachGoal(goal) {
+    if (typeof ym === 'function') {
+      ym(METRIKA_COUNTER_ID, 'reachGoal', goal);
+    }
+  }
+
+  function initMetricaGoals() {
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+
+      if (/^mailto:/i.test(href)) {
+        reachGoal('email_click');
+        return;
+      }
+
+      if (/t\.me\//i.test(href)) {
+        reachGoal('telegram_click');
+        return;
+      }
+
+      if (/instagram\.com/i.test(href)) {
+        reachGoal('instagram_click');
+      }
+    });
+
+    const contactsSection = document.getElementById('contacts');
+    if (!contactsSection || !('IntersectionObserver' in window)) return;
+
+    let contactsViewTracked = false;
+    const contactsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting || contactsViewTracked) return;
+          contactsViewTracked = true;
+          reachGoal('contacts_view');
+          contactsObserver.disconnect();
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    contactsObserver.observe(contactsSection);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMetricaGoals);
+  } else {
+    initMetricaGoals();
+  }
 })();
