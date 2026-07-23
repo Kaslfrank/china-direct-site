@@ -1581,17 +1581,6 @@ button.btn {
   transition: transform var(--dur-hover) var(--ease-out);
 }
 
-.projects__item--realized .projects__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.projects__item--realized .projects__media img {
-  object-fit: contain;
-  object-position: center;
-}
-
 .projects__meta {
   display: flex;
   flex-direction: column;
