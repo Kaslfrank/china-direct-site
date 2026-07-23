@@ -135,10 +135,12 @@
     let activeIndex = 0;
     let activeTitle = '';
     let lastFocus = null;
+    const isEnglish = document.documentElement.lang === 'en';
+    const assetsRoot = isEnglish ? '../assets/' : 'assets/';
 
     function buildImageList(item) {
       const folder = item.dataset.projectFolder || `project-${item.dataset.project}`;
-      const basePath = `assets/projects/${folder}/`;
+      const basePath = `${assetsRoot}projects/${folder}/`;
 
       if (item.dataset.galleryFiles) {
         return item.dataset.galleryFiles.split(',').map((file) => basePath + file.trim());
@@ -157,7 +159,9 @@
       if (!activeImages.length) return;
       const src = activeImages[activeIndex];
       galleryImg.src = src;
-      galleryImg.alt = `${activeTitle} — фото ${activeIndex + 1}`;
+      galleryImg.alt = isEnglish
+        ? `${activeTitle} — photo ${activeIndex + 1}`
+        : `${activeTitle} — фото ${activeIndex + 1}`;
       galleryCurrent.textContent = String(activeIndex + 1);
       galleryTotal.textContent = String(activeImages.length);
       prevBtn.disabled = activeIndex === 0;
@@ -239,7 +243,9 @@
 
       media?.setAttribute('role', 'button');
       media?.setAttribute('tabindex', '0');
-      media?.setAttribute('aria-label', `Смотреть проект: ${item.querySelector('.projects__location')?.textContent?.trim() || ''}`);
+      media?.setAttribute('aria-label', isEnglish
+        ? `View project: ${item.querySelector('.projects__location')?.textContent?.trim() || ''}`
+        : `Смотреть проект: ${item.querySelector('.projects__location')?.textContent?.trim() || ''}`);
       media?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
