@@ -353,6 +353,18 @@
         <p class="projects__lead">За последние годы мы помогли реализовать десятки проектов — от частных квартир до коммерческих интерьеров.</p>
       </header>
       <div class="projects__list">
+        <article class="projects__item reveal projects__item--realized" data-project="private-house-01" data-project-folder="private-house-01" data-gallery-files="living-room.jpg,living-room-2.jpg,kitchen.jpg,dining.jpg,bedroom-master.jpg,bedroom-2.jpg,lounge.jpg" data-gallery-description="Для данного проекта была выполнена комплексная поставка мебели и предметов интерьера из Китая. Проект включал подбор производителей, контроль качества, консолидацию грузов и доставку до объекта. В доме использованы мягкая мебель, столовые группы, кровати, кресла, журнальные столики и предметы интерьера, подобранные в единой современной стилистике.">
+          <hr class="projects__rule">
+          <figure class="projects__media">
+            <img src="assets/projects/private-house-01/hero.jpg" alt="Частный дом — полная комплектация интерьера" loading="lazy" decoding="async">
+          </figure>
+          <div class="projects__meta">
+            <p class="projects__badge">✓ Реализованный объект</p>
+            <p class="projects__location">Частный дом | Полная комплектация интерьера</p>
+            <p class="projects__detail projects__detail--summary">Полная комплектация частного дома площадью более 600&nbsp;м². Подбор и поставка мебели, кухонной зоны, столовой группы, кроватей, мягкой мебели, предметов интерьера и отделочных материалов.</p>
+            <button type="button" class="projects__view btn btn--line" data-open-project="private-house-01">Смотреть проект</button>
+          </div>
+        </article>
         <article class="projects__item reveal" data-project="01" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
@@ -841,6 +853,7 @@
     <header class="project-gallery__header">
       <h3 class="project-gallery__title" id="project-gallery-title"></h3>
       <p class="project-gallery__location"></p>
+      <p class="project-gallery__description" hidden></p>
     </header>
     <div class="project-gallery__stage">
       <button type="button" class="project-gallery__nav project-gallery__nav--prev" data-gallery-prev aria-label="Предыдущее фото">

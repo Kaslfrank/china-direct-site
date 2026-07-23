@@ -122,6 +122,7 @@
   if (galleryEl) {
     const galleryTitle = galleryEl.querySelector('.project-gallery__title');
     const galleryLocation = galleryEl.querySelector('.project-gallery__location');
+    const galleryDescription = galleryEl.querySelector('.project-gallery__description');
     const galleryImg = galleryEl.querySelector('.project-gallery__img');
     const galleryCurrent = galleryEl.querySelector('[data-gallery-current]');
     const galleryTotal = galleryEl.querySelector('[data-gallery-total]');
@@ -136,13 +137,20 @@
     let lastFocus = null;
 
     function buildImageList(item) {
+      const folder = item.dataset.projectFolder || `project-${item.dataset.project}`;
+      const basePath = `assets/projects/${folder}/`;
+
+      if (item.dataset.galleryFiles) {
+        return item.dataset.galleryFiles.split(',').map((file) => basePath + file.trim());
+      }
+
       const id = item.dataset.project;
       const numberedCount = Math.min(11, Number(item.dataset.galleryCount || 0));
       const images = ['cover.jpg'];
       for (let i = 1; i <= numberedCount; i += 1) {
         images.push(`${String(i).padStart(2, '0')}.jpg`);
       }
-      return images.map((file) => `assets/projects/project-${id}/${file}`);
+      return images.map((file) => `${basePath}${file}`);
     }
 
     function updateGallerySlide() {
@@ -160,12 +168,27 @@
       const titleEl = item.querySelector('.projects__location');
       const locationEl = item.querySelector('.projects__detail');
       activeTitle = titleEl?.textContent?.trim() || '';
-      const location = locationEl?.textContent?.trim() || '';
+      const location = item.dataset.galleryDescription
+        ? (item.dataset.galleryLocation || '')
+        : (item.dataset.galleryLocation || locationEl?.textContent?.trim() || '');
+      const description = item.dataset.galleryDescription || '';
       activeImages = buildImageList(item);
       activeIndex = 0;
 
       galleryTitle.textContent = activeTitle;
       galleryLocation.textContent = location;
+      galleryLocation.hidden = !location;
+
+      if (galleryDescription) {
+        if (description) {
+          galleryDescription.textContent = description;
+          galleryDescription.hidden = false;
+        } else {
+          galleryDescription.textContent = '';
+          galleryDescription.hidden = true;
+        }
+      }
+
       updateGallerySlide();
 
       galleryEl.setAttribute('aria-hidden', 'false');
@@ -179,6 +202,10 @@
       galleryEl.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
       galleryImg.removeAttribute('src');
+      if (galleryDescription) {
+        galleryDescription.textContent = '';
+        galleryDescription.hidden = true;
+      }
       lastFocus?.focus();
     }
 
