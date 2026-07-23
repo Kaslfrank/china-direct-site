@@ -1844,13 +1844,15 @@ button.btn {
 
 /* ── Project gallery modal ── */
 .project-gallery {
+  --gallery-img-max-h: min(68vh, calc(100dvh - 260px));
   position: fixed;
   inset: 0;
   z-index: 200;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: clamp(16px, 3vw, 32px);
+  padding: clamp(12px, 2vw, 24px);
+  overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transition:
@@ -1875,12 +1877,14 @@ button.btn {
 .project-gallery__dialog {
   position: relative;
   z-index: 1;
-  width: min(1120px, 100%);
-  max-height: calc(100vh - clamp(32px, 6vw, 64px));
+  width: min(1120px, 92vw);
+  max-height: calc(100dvh - clamp(16px, 3vw, 32px));
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 2vw, 24px);
-  padding: clamp(24px, 3vw, 40px);
+  gap: clamp(8px, 1vw, 12px);
+  padding: clamp(20px, 2.5vw, 32px);
+  padding-top: clamp(44px, 5vw, 52px);
+  overflow: hidden;
   background: var(--canvas);
   border-radius: var(--radius);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
@@ -1894,8 +1898,9 @@ button.btn {
 
 .project-gallery__close {
   position: absolute;
-  top: clamp(12px, 2vw, 20px);
-  right: clamp(12px, 2vw, 20px);
+  top: clamp(12px, 1.6vw, 16px);
+  right: clamp(12px, 1.6vw, 16px);
+  z-index: 3;
   width: 40px;
   height: 40px;
   display: flex;
@@ -1904,7 +1909,7 @@ button.btn {
   padding: 0;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
-  background: transparent;
+  background: var(--canvas);
   color: var(--ink);
   font-size: 24px;
   line-height: 1;
@@ -1920,7 +1925,11 @@ button.btn {
 }
 
 .project-gallery__header {
+  flex-shrink: 0;
+  max-height: min(26vh, 220px);
   padding-right: 48px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .project-gallery__title {
@@ -1934,7 +1943,7 @@ button.btn {
 }
 
 .project-gallery__location {
-  margin: clamp(6px, 0.8vw, 10px) 0 0;
+  margin: clamp(4px, 0.6vw, 8px) 0 0;
   font-size: clamp(13px, 1.1vw, 14px);
   font-weight: 300;
   color: var(--ink-soft);
@@ -1945,11 +1954,11 @@ button.btn {
 }
 
 .project-gallery__description {
-  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  margin: clamp(8px, 1vw, 12px) 0 0;
   max-width: 52ch;
   font-size: clamp(14px, 1.05vw, 15px);
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.65;
   color: var(--ink-soft);
 }
 
@@ -1958,31 +1967,41 @@ button.btn {
 }
 
 .project-gallery__stage {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: clamp(8px, 1.5vw, 16px);
+  justify-content: center;
+  gap: clamp(8px, 1.2vw, 14px);
+  flex: 1 1 auto;
   min-height: 0;
+  width: 100%;
 }
 
 .project-gallery__figure {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
-  height: clamp(280px, 58vh, 640px);
-  border-radius: calc(var(--radius) - 4px);
-  overflow: hidden;
+  padding: 0;
   background: #ebe7e1;
+  border-radius: calc(var(--radius) - 4px);
 }
 
 .project-gallery__img {
-  width: 100%;
-  height: 100%;
+  display: block;
+  max-width: 100%;
+  max-height: var(--gallery-img-max-h);
+  width: auto;
+  height: auto;
   object-fit: contain;
-  background: #ebe7e1;
+  object-position: center;
 }
 
 .project-gallery__nav {
   flex-shrink: 0;
+  align-self: center;
   width: 44px;
   height: 44px;
   display: flex;
@@ -1991,7 +2010,7 @@ button.btn {
   padding: 0;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
-  background: transparent;
+  background: var(--canvas);
   color: var(--ink);
   font-size: 28px;
   line-height: 1;
@@ -2013,7 +2032,9 @@ button.btn {
 }
 
 .project-gallery__counter {
+  flex-shrink: 0;
   margin: 0;
+  padding-top: clamp(4px, 0.6vw, 8px);
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -2023,30 +2044,32 @@ button.btn {
 }
 
 @media (max-width: 768px) {
+  .project-gallery {
+    --gallery-img-max-h: min(62vh, calc(100dvh - 300px));
+    padding: clamp(8px, 2vw, 16px);
+  }
+
   .project-gallery__dialog {
-    padding: clamp(20px, 5vw, 28px);
-    max-height: calc(100vh - 24px);
+    width: min(100%, 94vw);
+    max-height: calc(100dvh - 16px);
+    padding: clamp(16px, 4vw, 24px);
+    padding-top: clamp(44px, 10vw, 52px);
+    gap: clamp(8px, 2vw, 12px);
+  }
+
+  .project-gallery__header {
+    max-height: min(32vh, 240px);
+    padding-right: 40px;
   }
 
   .project-gallery__stage {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    gap: 12px;
+    gap: clamp(6px, 2vw, 10px);
   }
 
-  .project-gallery__nav--prev {
-    grid-row: 3;
-    justify-self: start;
-  }
-
-  .project-gallery__figure {
-    grid-row: 1;
-    height: clamp(220px, 52vh, 420px);
-  }
-
-  .project-gallery__nav--next {
-    grid-row: 3;
-    justify-self: end;
+  .project-gallery__nav {
+    width: 48px;
+    height: 48px;
+    font-size: 30px;
   }
 }
 
