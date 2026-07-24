@@ -1886,7 +1886,7 @@ button.btn {
 
 /* ── Project gallery modal ── */
 .project-gallery {
-  --gallery-img-max-h: min(68vh, calc(100dvh - 260px));
+  --gallery-img-max-h: min(58vh, 520px);
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -1919,14 +1919,17 @@ button.btn {
 .project-gallery__dialog {
   position: relative;
   z-index: 1;
-  width: min(1120px, 92vw);
+  width: min(1160px, 94vw);
   max-height: calc(100dvh - clamp(16px, 3vw, 32px));
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1vw, 12px);
+  gap: 0;
   padding: clamp(20px, 2.5vw, 32px);
   padding-top: clamp(44px, 5vw, 52px);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   background: var(--canvas);
   border-radius: var(--radius);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
@@ -1968,10 +1971,8 @@ button.btn {
 
 .project-gallery__header {
   flex-shrink: 0;
-  max-height: min(26vh, 220px);
-  padding-right: 48px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  padding-right: clamp(48px, 5vw, 56px);
+  padding-bottom: clamp(20px, 2.5vw, 28px);
 }
 
 .project-gallery__title {
@@ -1980,14 +1981,16 @@ button.btn {
   font-size: clamp(22px, 2.4vw, 30px);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .project-gallery__location {
   margin: clamp(4px, 0.6vw, 8px) 0 0;
   font-size: clamp(13px, 1.1vw, 14px);
   font-weight: 300;
+  line-height: 1.5;
   color: var(--ink-soft);
 }
 
@@ -1996,8 +1999,8 @@ button.btn {
 }
 
 .project-gallery__description {
-  margin: clamp(8px, 1vw, 12px) 0 0;
-  max-width: 52ch;
+  margin: clamp(12px, 1.4vw, 16px) 0 0;
+  max-width: 72ch;
   font-size: clamp(14px, 1.05vw, 15px);
   font-weight: 300;
   line-height: 1.65;
@@ -2013,9 +2016,11 @@ button.btn {
   align-items: center;
   justify-content: center;
   gap: clamp(8px, 1.2vw, 14px);
-  flex: 1 1 auto;
-  min-height: 0;
+  flex-shrink: 0;
   width: 100%;
+  margin-top: clamp(4px, 0.5vw, 8px);
+  padding-top: clamp(20px, 2.5vw, 32px);
+  border-top: 1px solid var(--line);
 }
 
 .project-gallery__figure {
@@ -2076,7 +2081,7 @@ button.btn {
 .project-gallery__counter {
   flex-shrink: 0;
   margin: 0;
-  padding-top: clamp(4px, 0.6vw, 8px);
+  padding-top: clamp(12px, 1.4vw, 16px);
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -2087,7 +2092,7 @@ button.btn {
 
 @media (max-width: 768px) {
   .project-gallery {
-    --gallery-img-max-h: min(62vh, calc(100dvh - 300px));
+    --gallery-img-max-h: min(52vh, 420px);
     padding: clamp(8px, 2vw, 16px);
   }
 
@@ -2096,16 +2101,20 @@ button.btn {
     max-height: calc(100dvh - 16px);
     padding: clamp(16px, 4vw, 24px);
     padding-top: clamp(44px, 10vw, 52px);
-    gap: clamp(8px, 2vw, 12px);
   }
 
   .project-gallery__header {
-    max-height: min(32vh, 240px);
     padding-right: 40px;
+    padding-bottom: clamp(16px, 4vw, 24px);
+  }
+
+  .project-gallery__description {
+    max-width: none;
   }
 
   .project-gallery__stage {
     gap: clamp(6px, 2vw, 10px);
+    padding-top: clamp(16px, 4vw, 24px);
   }
 
   .project-gallery__nav {
