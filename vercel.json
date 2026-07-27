@@ -11,6 +11,10 @@
     {
       "source": "/sitemap.xml",
       "destination": "/public/sitemap.xml"
+    },
+    {
+      "source": "/site.webmanifest",
+      "destination": "/public/site.webmanifest"
     }
   ]
 }

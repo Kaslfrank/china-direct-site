@@ -1,0 +1,22 @@
+{
+  "name": "China Direct",
+  "short_name": "China Direct",
+  "description": "Комплектация интерьеров из Китая",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4f2ed",
+  "theme_color": "#171412",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

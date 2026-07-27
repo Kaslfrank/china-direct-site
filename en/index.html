@@ -18,7 +18,7 @@
   <script>document.documentElement.classList.add('js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>China Direct — Interior Furnishing from China</title>
-  <meta name="description" content="Interior furnishing directly from Chinese factories: furniture, lighting, sanitary ware and finishing materials. Sourcing, quality control, purchasing and worldwide delivery.">
+  <meta name="description" content="Interior furnishing from Chinese factories: furniture, lighting, sanitary ware and finishing materials. Sourcing, quality control and worldwide delivery.">
   <link rel="canonical" href="https://chinadirect.pro/en/">
   <link rel="alternate" hreflang="ru" href="https://chinadirect.pro/">
   <link rel="alternate" hreflang="en" href="https://chinadirect.pro/en/">
@@ -30,7 +30,11 @@
   <meta property="og:title" content="China Direct — Interior Furnishing from China">
   <meta property="og:description" content="We source furniture, kitchens, lighting, sanitary ware and finishing materials directly from verified manufacturers in China. Full project furnishing from factory selection to delivery.">
   <meta property="og:image" content="https://chinadirect.pro/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale:alternate" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@chinadirect86">
   <meta name="twitter:title" content="China Direct — Interior Furnishing from China">
   <meta name="twitter:description" content="We source furniture, kitchens, lighting, sanitary ware and finishing materials directly from verified manufacturers in China. Full project furnishing from factory selection to delivery.">
   <meta name="twitter:image" content="https://chinadirect.pro/assets/og-image.jpg">
@@ -38,23 +42,95 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#171412">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "China Direct",
-    "url": "https://chinadirect.pro",
-    "logo": "https://chinadirect.pro/logo.png",
-    "description": "Interior sourcing from China",
-    "sameAs": [
-      "https://t.me/ChinaDirectIgor",
-      "https://www.instagram.com/chinadirect86"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://chinadirect.pro/#organization",
+        "name": "China Direct",
+        "url": "https://chinadirect.pro/",
+        "logo": "https://chinadirect.pro/logo.png",
+        "description": "Interior furnishing from China",
+        "sameAs": [
+          "https://t.me/ChinaDirectIgor",
+          "https://www.instagram.com/chinadirect86"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://chinadirect.pro/en/#website",
+        "url": "https://chinadirect.pro/en/",
+        "name": "China Direct",
+        "description": "Interior furnishing from China",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://chinadirect.pro/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://chinadirect.pro/en/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you work with private clients or only with designers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We work with designers, architects, interior specifiers and private clients. You can reach out with a complete project or with a specific request for furniture, lighting, sanitary ware, finishing materials or décor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work with design studios?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We select manufacturers for the project, approve materials and samples, oversee production and quality, and organize delivery."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can furniture be made to a custom design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Many factories produce items to custom dimensions, drawings, materials and colors. We guide the approval of every detail with the manufacturer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you control quality?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Before shipment we check appearance, dimensions, materials, completeness and packaging. When needed, we provide photo and video reports prior to dispatch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is delivery organized?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We consolidate goods from multiple factories, arrange additional packaging, prepare documentation and deliver to the agreed city or site."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does project furnishing take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Timing depends on order volume, product complexity and factory lead times. Once we receive the specification, we provide an estimated production and delivery schedule."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
+  <link rel="preload" href="../hero-penthouse.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="../styles-v2.css" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles-v2.css">
 </head>
@@ -63,7 +139,7 @@
 <header class="site-header is-on-hero" id="header">
   <a class="site-header__logo" href="#top">
     <span class="site-header__logo-mark">
-      <img src="../logo.png" alt="" width="37" height="37" decoding="async">
+      <img src="../logo.png" alt="China Direct" width="37" height="37" decoding="async">
     </span>
     <span class="site-header__logo-text">China Direct</span>
   </a>
@@ -136,28 +212,28 @@
       <div class="furnish__layout">
         <div class="furnish__collage" aria-label="Interior composition">
           <figure class="furnish__layer furnish__layer--panels" data-cat="panels">
-            <div class="furnish__frame"><img src="../assets/editorial/wall-panels.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/wall-panels.jpg" alt="Wall Panels" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--kitchen" data-cat="kitchens">
-            <div class="furnish__frame"><img src="../assets/editorial/kitchen.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/kitchen.jpg" alt="Kitchens" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--furniture" data-cat="furniture">
-            <div class="furnish__frame"><img src="../assets/editorial/furniture.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/furniture.jpg" alt="Furniture" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--wardrobes" data-cat="wardrobes">
-            <div class="furnish__frame"><img src="../assets/editorial/walk-in-wardrobes.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/walk-in-wardrobes.jpg" alt="Walk-in Wardrobes" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--bathroom" data-cat="bathroom">
-            <div class="furnish__frame"><img src="../assets/editorial/bathroom.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/bathroom.jpg" alt="Bathrooms" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--decor" data-cat="decor">
-            <div class="furnish__frame"><img src="../assets/editorial/decor.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/decor.jpg" alt="Décor and Accessories" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--stone" data-cat="stone">
-            <div class="furnish__frame"><img src="../assets/editorial/stone.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/stone.jpg" alt="Stone" loading="lazy" decoding="async"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--lighting" data-cat="lighting">
-            <div class="furnish__frame"><img src="../assets/editorial/lighting.jpg" alt="" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="../assets/editorial/lighting.jpg" alt="Lighting" loading="lazy" decoding="async"></div>
           </figure>
         </div>
         <nav class="furnish__index" aria-label="Categories">
