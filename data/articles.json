@@ -8,8 +8,8 @@
       "category": "Комплектация",
       "date": "2026-07-10",
       "dateFormatted": "10 июля 2026",
-      "image": "/assets/editorial/furniture.jpg",
-      "imageAlt": "Мебель для интерьерного проекта"
+      "image": "/assets/blog/choosing-furniture.jpg",
+      "imageAlt": "Премиальный современный интерьер с мебелью на заказ"
     },
     {
       "slug": "kontrol-kachestva-mebeli-iz-kitaya",
@@ -18,8 +18,8 @@
       "category": "Качество",
       "date": "2026-06-28",
       "dateFormatted": "28 июня 2026",
-      "image": "/assets/process/04-quality.png",
-      "imageAlt": "Контроль качества мебели"
+      "image": "/assets/blog/quality-control.jpg",
+      "imageAlt": "Контроль качества мебели на фабрике"
     },
     {
       "slug": "etapy-komplektatsii-interera",
@@ -28,8 +28,8 @@
       "category": "Процесс",
       "date": "2026-06-12",
       "dateFormatted": "12 июня 2026",
-      "image": "/assets/editorial/kitchen.jpg",
-      "imageAlt": "Комплектация кухни и интерьера"
+      "image": "/assets/blog/furnishing-stages.jpg",
+      "imageAlt": "Упаковка и логистика мебели для интерьерного проекта"
     }
   ]
 }
