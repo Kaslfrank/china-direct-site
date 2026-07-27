@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /yandex_383c77de7c0ac07c.html
 Sitemap: https://chinadirect.pro/sitemap.xml
 Host: chinadirect.pro
