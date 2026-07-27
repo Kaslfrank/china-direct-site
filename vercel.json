@@ -3,6 +3,14 @@
     {
       "source": "/yandex_383c77de7c0ac07c.html",
       "destination": "/public/yandex_383c77de7c0ac07c.html"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/public/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/public/sitemap.xml"
     }
   ]
 }
