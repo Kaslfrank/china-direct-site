@@ -19,24 +19,34 @@
 
   let activeIndex = 0;
   let lastFocus = null;
+  let closeTimer = null;
 
   function updateSlide() {
     const current = images[activeIndex];
     if (!current || !imgEl) return;
 
+    lightbox.classList.add('is-changing');
     imgEl.src = current.src;
     imgEl.alt = current.alt;
     if (currentEl) currentEl.textContent = String(activeIndex + 1);
     if (totalEl) totalEl.textContent = String(images.length);
     if (prevBtn) prevBtn.disabled = activeIndex === 0;
     if (nextBtn) nextBtn.disabled = activeIndex === images.length - 1;
+
+    window.requestAnimationFrame(() => {
+      lightbox.classList.remove('is-changing');
+    });
   }
 
   function openLightbox(index) {
     activeIndex = index;
     updateSlide();
     lightbox.setAttribute('aria-hidden', 'false');
-    requestAnimationFrame(() => lightbox.classList.add('is-open'));
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        lightbox.classList.add('is-open');
+      });
+    });
     document.body.style.overflow = 'hidden';
     lightbox.querySelector('.project-lightbox__close')?.focus();
   }
@@ -45,7 +55,10 @@
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    imgEl?.removeAttribute('src');
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(() => {
+      imgEl?.removeAttribute('src');
+    }, 550);
     lastFocus?.focus();
   }
 
