@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://chinadirect.pro/sitemap.xml
-Host: https://chinadirect.pro
