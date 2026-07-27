@@ -45,7 +45,12 @@ function Send-Response {
 function Get-LocalPath([string]$absolutePath) {
     $path = [System.Uri]::UnescapeDataString($absolutePath.TrimStart('/'))
     if ([string]::IsNullOrWhiteSpace($path)) { $path = 'index.html' }
-    return Join-Path $Root ($path -replace '/', [IO.Path]::DirectorySeparatorChar)
+    $relative = $path -replace '/', [IO.Path]::DirectorySeparatorChar
+    $rootPath = Join-Path $Root $relative
+    if (Test-Path $rootPath -PathType Leaf) { return $rootPath }
+    $publicPath = Join-Path (Join-Path $Root 'public') $relative
+    if (Test-Path $publicPath -PathType Leaf) { return $publicPath }
+    return $rootPath
 }
 
 while ($listener.IsListening) {
