@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/yandex_383c77de7c0ac07c.html",
+      "destination": "/public/yandex_383c77de7c0ac07c.html"
+    }
+  ]
+}
