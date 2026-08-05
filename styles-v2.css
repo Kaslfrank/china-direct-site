@@ -3528,6 +3528,21 @@ html:not(.js) .reveal {
   object-position: center;
 }
 
+.blog-article__figure--wide {
+  margin: clamp(28px, 3.5vw, 40px) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #ebe7e1;
+}
+
+.blog-article__figure--wide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 48%;
+}
+
 .blog-article__content {
   max-width: 720px;
   margin-bottom: clamp(48px, 6vw, 72px);
