@@ -1,0 +1,15 @@
+{
+  "postsPerPage": 6,
+  "articles": [
+    {
+      "slug": "interior-completion-from-china",
+      "title": "Interior Sourcing from China: From Selection to Delivery",
+      "excerpt": "A practical overview of supplier selection, material approval, production control, consolidation and delivery.",
+      "category": "Furnishing",
+      "date": "2026-08-05",
+      "dateFormatted": "August 5, 2026",
+      "image": "/assets/blog/interior-completion-from-china.png",
+      "imageAlt": "Contemporary interior with furniture and lighting for an interior sourcing project"
+    }
+  ]
+}
