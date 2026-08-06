@@ -3354,8 +3354,8 @@ html:not(.js) .reveal {
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.blog-card__media img[src*="interior-completion-from-china"] {
-  object-position: center 58%;
+.blog-card__media img[src*="interior-sourcing-process"] {
+  object-position: center 48%;
 }
 
 .blog-card:hover .blog-card__media img {
