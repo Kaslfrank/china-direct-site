@@ -91,6 +91,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://chinadirect.pro/projects/moscow-apartment/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chinadirect.pro/en/projects/moscow-apartment/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://chinadirect.pro/projects/luxury-private-house/</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
