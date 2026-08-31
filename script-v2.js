@@ -301,11 +301,14 @@
     }
 
     function openContactModal(trigger) {
+      if (contactModal.classList.contains('is-open')) return;
+
       contactLastFocus = trigger;
       contactModal.setAttribute('aria-hidden', 'false');
       requestAnimationFrame(() => contactModal.classList.add('is-open'));
       document.body.style.overflow = 'hidden';
       contactModal.querySelector('.contact-modal__close')?.focus();
+      reachGoal('contact_modal_open');
     }
 
     function closeContactModal() {
@@ -456,6 +459,11 @@
 
       if (/t\.me\//i.test(href)) {
         reachGoal('telegram_click');
+        return;
+      }
+
+      if (/wa\.me\//i.test(href) || /api\.whatsapp\.com\//i.test(href) || /^whatsapp:\/\//i.test(href)) {
+        reachGoal('whatsapp_click');
         return;
       }
 
