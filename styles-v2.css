@@ -52,7 +52,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -2866,7 +2869,7 @@ html:not(.js) .reveal {
   }
 
   .furnish__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: clamp(48px, 8vw, 72px);
   }
 
@@ -2878,11 +2881,11 @@ html:not(.js) .reveal {
   }
 
   .furnish__collage {
-    width: 88%;
+    width: 100%;
     max-width: none;
-    height: auto;
-    min-height: 480px;
-    aspect-ratio: 1000 / 580;
+    height: clamp(280px, 58vw, 480px);
+    min-height: 0;
+    aspect-ratio: auto;
   }
 
   .furnish__layer--panels {
@@ -2940,6 +2943,8 @@ html:not(.js) .reveal {
 
   .furnish__index {
     align-self: auto;
+    min-width: 0;
+    width: 100%;
     padding-inline: clamp(8px, 3vw, 24px);
   }
 
@@ -4082,4 +4087,57 @@ html:not(.js) .reveal {
   .project-page__thumb:hover img {
     transform: none;
   }
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter-normal-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('/assets/fonts/cormorant-normal-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url('/assets/fonts/cormorant-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/cormorant-italic-cyrillic.woff2') format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/cormorant-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

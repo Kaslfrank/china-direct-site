@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="ru">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R8L3DZK9VP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R8L3DZK9VP');
+  </script>
   <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -59,6 +67,23 @@
           "https://t.me/ChinaDirectIgor",
           "https://www.instagram.com/chinadirect86"
         ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.chinadirect.pro/#professional-service",
+        "name": "China Direct",
+        "url": "https://www.chinadirect.pro/",
+        "image": "https://www.chinadirect.pro/assets/og-image.jpg",
+        "email": "info@chinadirect.pro",
+        "telephone": "+7 995 344-19-95",
+        "description": "Комплектация интерьеров из Китая: подбор фабрик, согласование заказа, контроль качества и организация доставки.",
+        "serviceType": "Комплектация интерьеров из Китая",
+        "areaServed": [
+          { "@type": "Country", "name": "Россия" },
+          { "@type": "Country", "name": "Китай" },
+          { "@type": "Country", "name": "Объединённые Арабские Эмираты" }
+        ],
+        "parentOrganization": { "@id": "https://www.chinadirect.pro/#organization" }
       },
       {
         "@type": "WebSite",
@@ -126,13 +151,15 @@
     ]
   }
   </script>
-  <link rel="preload" href="hero-penthouse.jpg" as="image" fetchpriority="high">
-  <link rel="preload" href="styles-v2.css" as="style">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-v2.css">
+  <style>
+    :root{--ink:#181716;--ink-soft:#5c5854;--ink-faint:#9a9590;--line:rgba(24,23,22,.1);--line-strong:rgba(24,23,22,.2);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,sans-serif;--header-h:84px;--btn-h:56px;--dur:.45s;--ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(.16,1,.3,1)}
+    *,*::before,*::after{box-sizing:border-box}html{overflow-x:clip}body{margin:0;overflow-x:clip;font-family:var(--sans);font-size:15px;font-weight:300;line-height:1.65;color:var(--ink);background:#f4f2ed;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+    .site-header{position:fixed;inset:0 0 auto;z-index:100;display:flex;align-items:center;justify-content:space-between;height:var(--header-h);padding-inline:clamp(32px,6vw,80px);background:rgba(18,18,18,.42);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}.site-header__logo{display:flex;align-items:center;gap:16px;font-size:12px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:#fff}.site-header__logo-mark{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:37px;height:37px;background:#fff;overflow:hidden;box-shadow:0 2px 10px rgba(8,7,6,.1)}.site-header__logo-mark img{width:37px;height:37px;object-fit:cover;object-position:left center;transform:scale(1.35)}.site-header__logo-text{line-height:1;white-space:nowrap}.site-header__nav{display:flex;align-items:center;gap:clamp(20px,3vw,44px)}.site-header__nav a{font-size:10px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.86)}.site-header__lang{display:flex;align-items:center;gap:6px;margin-right:clamp(4px,1vw,12px);font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}.site-header__lang-link{color:rgba(255,255,255,.55)}.site-header__lang-link.is-active{color:#fff}.site-header__lang-sep{color:rgba(255,255,255,.35)}.site-header__toggle{display:none;flex-direction:column;justify-content:center;gap:6px;width:28px;height:28px;padding:0;border:0;background:none}.site-header__toggle span{display:block;height:1px;background:#fff}
+    .hero{position:relative;display:grid;align-items:center;width:100%;height:100vh;height:100dvh;margin:0;padding:0;overflow:hidden;background:#0a0908}.hero__bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;margin:0;padding:0;border:0;object-fit:cover;object-position:center;filter:brightness(1.08)}.hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,7,6,.88) 0%,rgba(8,7,6,.68) 32%,rgba(8,7,6,.35) 55%,rgba(8,7,6,.1) 75%,transparent 100%)}.hero__inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;width:100%;max-width:560px;min-height:100dvh;padding:var(--header-h) clamp(20px,5vw,120px) clamp(40px,5vw,64px)}.hero__title{margin:0;font-family:var(--serif);font-size:clamp(48px,6vw,96px);font-weight:400;letter-spacing:-.035em;line-height:1.1;color:#fff}.hero__lead{margin:clamp(32px,4vw,44px) 0 0;max-width:480px;font-size:clamp(15px,1.15vw,17px);line-height:1.8;color:rgba(255,255,255,.78)}.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(40px,4.5vw,56px)}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--btn-h);padding:0 32px;font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent}.hero__btn{min-width:clamp(200px,17vw,232px);padding-inline:38px}.hero__actions .btn--dark{background:#fff;border-color:#fff;color:var(--ink)}.hero__actions .btn--line{color:#fff;border-color:rgba(255,255,255,.4);background:transparent}
+    @media(max-width:960px){.hero{height:auto;min-height:100dvh}.hero__inner{max-width:none;min-height:100dvh}}@media(max-width:768px){.site-header{padding-inline:clamp(20px,5vw,32px)}.hero__inner{padding-inline:clamp(20px,5vw,48px)}.hero__title{font-size:clamp(40px,11vw,56px)}}@media(max-width:640px){:root{--header-h:72px}.site-header__toggle{display:flex}.site-header__nav{display:none}.hero__actions{flex-direction:column}.hero__btn{width:100%;min-width:0}}
+  </style>
+  <link rel="stylesheet" href="styles-v2.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles-v2.css"></noscript>
 </head>
 <body>
 
@@ -167,7 +194,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <img class="hero__bg" src="hero-penthouse.jpg" alt="Интерьерный проект China Direct" fetchpriority="high" decoding="async">
+    <img class="hero__bg" src="hero-penthouse-1400.webp" srcset="hero-penthouse-800.webp 800w, hero-penthouse-1400.webp 1400w" sizes="100vw" alt="Интерьерный проект China Direct" fetchpriority="high" decoding="async" width="2000" height="1331">
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__inner">
       <h1 class="hero__title">Комплектация<br>интерьеров<br>из Китая</h1>
@@ -200,7 +227,7 @@
           </p>
         </div>
         <figure class="about__visual reveal">
-          <img src="assets/about/client-interior.png" alt="Интерьерный проект China Direct" loading="lazy" decoding="async">
+          <img src="assets/about/client-interior.webp" alt="Интерьерный проект China Direct" loading="lazy" decoding="async" width="1536" height="1024">
         </figure>
       </div>
     </div>
@@ -213,28 +240,28 @@
       <div class="furnish__layout">
         <div class="furnish__collage" aria-label="Interior composition">
           <figure class="furnish__layer furnish__layer--panels" data-cat="panels">
-            <div class="furnish__frame"><img src="assets/editorial/wall-panels.jpg" alt="Настенные панели" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/wall-panels-thumb.webp" alt="Настенные панели" loading="lazy" decoding="async" width="1024" height="1024"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--kitchen" data-cat="kitchens">
-            <div class="furnish__frame"><img src="assets/editorial/kitchen.jpg" alt="Кухни" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/kitchen-thumb.webp" alt="Кухни" loading="lazy" decoding="async" width="1600" height="1066"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--furniture" data-cat="furniture">
-            <div class="furnish__frame"><img src="assets/editorial/furniture.jpg" alt="Мебель" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/furniture-thumb.webp" alt="Мебель" loading="lazy" decoding="async" width="736" height="736"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--wardrobes" data-cat="wardrobes">
-            <div class="furnish__frame"><img src="assets/editorial/walk-in-wardrobes.jpg" alt="Гардеробные" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/walk-in-wardrobes-thumb.webp" alt="Гардеробные" loading="lazy" decoding="async" width="1024" height="1024"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--bathroom" data-cat="bathroom">
-            <div class="furnish__frame"><img src="assets/editorial/bathroom.jpg" alt="Ванные" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/bathroom-thumb.webp" alt="Ванные" loading="lazy" decoding="async" width="1200" height="675"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--decor" data-cat="decor">
-            <div class="furnish__frame"><img src="assets/editorial/decor.jpg" alt="Декор и аксессуары" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/decor-thumb.webp" alt="Декор и аксессуары" loading="lazy" decoding="async" width="1200" height="628"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--stone" data-cat="stone">
-            <div class="furnish__frame"><img src="assets/editorial/stone.jpg" alt="Камень" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/stone-thumb.webp" alt="Камень" loading="lazy" decoding="async" width="1536" height="1024"></div>
           </figure>
           <figure class="furnish__layer furnish__layer--lighting" data-cat="lighting">
-            <div class="furnish__frame"><img src="assets/editorial/lighting.jpg" alt="Освещение" loading="lazy" decoding="async"></div>
+            <div class="furnish__frame"><img src="assets/editorial/lighting-thumb.webp" alt="Освещение" loading="lazy" decoding="async" width="1536" height="1024"></div>
           </figure>
         </div>
         <nav class="furnish__index" aria-label="Категории">
@@ -265,37 +292,37 @@
       </header>
       <div class="catalog__grid">
         <a class="catalog__tile catalog__tile--hero reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/contemporary.jpeg" alt="Contemporary" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/contemporary.jpeg" alt="Contemporary" loading="lazy" decoding="async" width="1920" height="1280">
           <div class="catalog__caption">
             <span class="catalog__name">Contemporary</span>
           </div>
         </a>
         <a class="catalog__tile catalog__tile--tall reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/japandi.jpeg" alt="Japandi" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/japandi.jpeg" alt="Japandi" loading="lazy" decoding="async" width="1000" height="560">
           <div class="catalog__caption">
             <span class="catalog__name">Japandi</span>
           </div>
         </a>
         <a class="catalog__tile catalog__tile--compact reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/modern-classic.jpeg" alt="Modern Classic" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/modern-classic.jpeg" alt="Modern Classic" loading="lazy" decoding="async" width="900" height="588">
           <div class="catalog__caption">
             <span class="catalog__name">Modern Classic</span>
           </div>
         </a>
         <a class="catalog__tile catalog__tile--compact reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/luxury.jpeg" alt="Luxury" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/luxury.jpeg" alt="Luxury" loading="lazy" decoding="async" width="2560" height="1708">
           <div class="catalog__caption">
             <span class="catalog__name">Luxury</span>
           </div>
         </a>
         <a class="catalog__tile catalog__tile--wide reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/minimalism.jpeg" alt="Minimalism" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/minimalism.jpeg" alt="Minimalism" loading="lazy" decoding="async" width="768" height="512">
           <div class="catalog__caption">
             <span class="catalog__name">Minimalism</span>
           </div>
         </a>
         <a class="catalog__tile catalog__tile--vertical reveal" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <img src="assets/interior-styles/organic-modern.jpeg" alt="Organic Modern" loading="lazy" decoding="async">
+          <img src="assets/interior-styles/organic-modern.jpeg" alt="Organic Modern" loading="lazy" decoding="async" width="1024" height="1024">
           <div class="catalog__caption">
             <span class="catalog__name">Organic Modern</span>
           </div>
@@ -314,7 +341,7 @@
       <div class="process__grid">
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/01-project.png" alt="Получаем проект" loading="lazy" decoding="async">
+            <img src="assets/process/01-project.webp" alt="Получаем проект" loading="lazy" decoding="async" width="1448" height="1086">
           </div>
           <div class="process__body">
             <h3>Получаем проект</h3>
@@ -323,7 +350,7 @@
         </article>
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/02-showroom.png" alt="Подбираем фабрики" loading="lazy" decoding="async">
+            <img src="assets/process/02-showroom.webp" alt="Подбираем фабрики" loading="lazy" decoding="async" width="1537" height="1023">
           </div>
           <div class="process__body">
             <h3>Подбираем фабрики</h3>
@@ -332,7 +359,7 @@
         </article>
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/03-materials.png" alt="Согласовываем материалы" loading="lazy" decoding="async">
+            <img src="assets/process/03-materials.webp" alt="Согласовываем материалы" loading="lazy" decoding="async" width="1435" height="1096">
           </div>
           <div class="process__body">
             <h3>Согласовываем материалы</h3>
@@ -341,7 +368,7 @@
         </article>
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/04-quality.png" alt="Контролируем качество" loading="lazy" decoding="async">
+            <img src="assets/process/04-quality.webp" alt="Контролируем качество" loading="lazy" decoding="async" width="1537" height="1023">
           </div>
           <div class="process__body">
             <h3>Контролируем качество</h3>
@@ -350,7 +377,7 @@
         </article>
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/05-logistics.png" alt="Организуем логистику" loading="lazy" decoding="async">
+            <img src="assets/process/05-logistics.webp" alt="Организуем логистику" loading="lazy" decoding="async" width="1454" height="1082">
           </div>
           <div class="process__body">
             <h3>Организуем логистику</h3>
@@ -359,7 +386,7 @@
         </article>
         <article class="process__card reveal">
           <div class="process__media">
-            <img src="assets/process/06-finished-project.png" alt="Готовый интерьер" loading="lazy" decoding="async">
+            <img src="assets/process/06-finished-project.webp" alt="Готовый интерьер" loading="lazy" decoding="async" width="1536" height="1024">
           </div>
           <div class="process__body">
             <h3>Готовый интерьер</h3>
@@ -453,7 +480,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/modern-cafe/">
-            <img src="assets/projects/modern-cafe/cover.webp" alt="Комплектация современного кафе" loading="lazy" decoding="async">
+            <img src="assets/projects/modern-cafe/cover.webp" alt="Комплектация современного кафе" loading="lazy" decoding="async" width="1448" height="1086">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Коммерческие интерьеры</p>
@@ -465,7 +492,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/modern-apartment/">
-            <img src="assets/projects/modern-apartment-01/cover.jpg" alt="Комплектация современной квартиры" loading="lazy" decoding="async">
+            <img src="assets/projects/modern-apartment-01/cover.jpg" alt="Комплектация современной квартиры" loading="lazy" decoding="async" width="1441" height="1080">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -477,7 +504,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/private-house/">
-            <img src="assets/projects/private-house-01/living-room.jpg" alt="Комплектация частного дома" loading="lazy" decoding="async">
+            <img src="assets/projects/private-house-01/living-room.jpg" alt="Комплектация частного дома" loading="lazy" decoding="async" width="1440" height="1080">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -489,7 +516,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/townhouse-modern/">
-            <img src="assets/projects/townhouse-modern/hero.webp" alt="Комплектация таунхауса в современном стиле" loading="lazy" decoding="async">
+            <img src="assets/projects/townhouse-modern/hero.webp" alt="Комплектация таунхауса в современном стиле" loading="lazy" decoding="async" width="1080" height="1440">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -501,7 +528,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/country-house-moscow/">
-            <img src="assets/projects/country-house-moscow/hero.webp" alt="Комплектация загородного дома в Подмосковье" loading="lazy" decoding="async">
+            <img src="assets/projects/country-house-moscow/hero.webp" alt="Комплектация загородного дома в Подмосковье" loading="lazy" decoding="async" width="1440" height="1080">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -513,7 +540,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/riga-residence/">
-            <img src="assets/projects/riga-residence/dining-room-1.webp" alt="Частная резиденция на Рижском шоссе" loading="lazy" decoding="async">
+            <img src="assets/projects/riga-residence/dining-room-1.webp" alt="Частная резиденция на Рижском шоссе" loading="lazy" decoding="async" width="1087" height="1447">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -525,7 +552,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/moscow-apartment/">
-            <img src="assets/projects/moscow-apartment/04-living-room.webp" alt="Трёхкомнатная квартира, Москва" loading="lazy" decoding="async">
+            <img src="assets/projects/moscow-apartment/04-living-room.webp" alt="Трёхкомнатная квартира, Москва" loading="lazy" decoding="async" width="1500" height="1000">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -537,7 +564,7 @@
         <article class="projects__item reveal projects__item--page">
           <hr class="projects__rule">
           <a class="projects__media" href="/projects/basmanny-duplex/">
-            <img src="assets/projects/basmanny-duplex-webp-final/01-living-room-duplex.webp" alt="Двухуровневые апартаменты в Басманном районе" loading="lazy" decoding="async">
+            <img src="assets/projects/basmanny-duplex-webp-final/01-living-room-duplex.webp" alt="Двухуровневые апартаменты в Басманном районе" loading="lazy" decoding="async" width="1500" height="1000">
           </a>
           <div class="projects__meta">
             <p class="projects__badge">Частные интерьеры</p>
@@ -549,7 +576,7 @@
         <article class="projects__item reveal" data-project="01" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-01/cover.jpg" alt="Загородный дом в Подмосковье" loading="lazy" decoding="async">
+            <img src="assets/projects/project-01/cover-thumb.webp" alt="Загородный дом в Подмосковье" loading="lazy" decoding="async" width="1920" height="2400">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Загородный дом в Подмосковье</p>
@@ -560,7 +587,7 @@
         <article class="projects__item reveal" data-project="02" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-02/cover.jpg" alt="Двухэтажный дом на Новой Риге" loading="lazy" decoding="async">
+            <img src="assets/projects/project-02/cover-thumb.webp" alt="Двухэтажный дом на Новой Риге" loading="lazy" decoding="async" width="1680" height="1276">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Двухэтажный дом на Новой Риге</p>
@@ -571,7 +598,7 @@
         <article class="projects__item reveal" data-project="03" data-gallery-count="11">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-03/cover.jpg" alt="Однокомнатная квартира ЖК Слава" loading="lazy" decoding="async">
+            <img src="assets/projects/project-03/cover-thumb.webp" alt="Однокомнатная квартира ЖК Слава" loading="lazy" decoding="async" width="1680" height="1400">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Однокомнатная квартира ЖК Слава</p>
@@ -582,7 +609,7 @@
         <article class="projects__item reveal" data-project="04" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-04/cover.jpg" alt="Дом с бассейном" loading="lazy" decoding="async">
+            <img src="assets/projects/project-04/cover-thumb.webp" alt="Дом с бассейном" loading="lazy" decoding="async" width="1800" height="2250">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Дом в Иваново</p>
@@ -593,7 +620,7 @@
         <article class="projects__item reveal" data-project="05" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-05/cover.jpg" alt="Дом в Подмосковье" loading="lazy" decoding="async">
+            <img src="assets/projects/project-05/cover-thumb.webp" alt="Дом в Подмосковье" loading="lazy" decoding="async" width="1680" height="1008">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Дом в Подмосковье</p>
@@ -604,7 +631,7 @@
         <article class="projects__item reveal" data-project="06" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-06/cover.jpg" alt="Трехкомнатная квартира в Москве" loading="lazy" decoding="async">
+            <img src="assets/projects/project-06/cover-thumb.webp" alt="Трехкомнатная квартира в Москве" loading="lazy" decoding="async" width="1920" height="2880">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Трехкомнатная квартира в Москве</p>
@@ -615,7 +642,7 @@
         <article class="projects__item reveal" data-project="07" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-07/cover.jpg" alt="Квартира в Сколково" loading="lazy" decoding="async">
+            <img src="assets/projects/project-07/cover-thumb.webp" alt="Квартира в Сколково" loading="lazy" decoding="async" width="1680" height="1148">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Квартира в Сколково</p>
@@ -626,7 +653,7 @@
         <article class="projects__item reveal" data-project="08" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-08/cover.jpg" alt="Современный дом на Новой Риге" loading="lazy" decoding="async">
+            <img src="assets/projects/project-08/cover-thumb.webp" alt="Современный дом на Новой Риге" loading="lazy" decoding="async" width="1680" height="1148">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Современный дом на Новой Риге</p>
@@ -637,7 +664,7 @@
         <article class="projects__item reveal" data-project="09" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-09/cover.jpg" alt="Квартира в Французском стиле" loading="lazy" decoding="async">
+            <img src="assets/projects/project-09/cover-thumb.webp" alt="Квартира в Французском стиле" loading="lazy" decoding="async" width="1680" height="2100">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Квартира в Французском стиле</p>
@@ -648,7 +675,7 @@
         <article class="projects__item reveal" data-project="10" data-gallery-count="12">
           <hr class="projects__rule">
           <figure class="projects__media">
-            <img src="assets/projects/project-10/cover.jpg" alt="Дом в Иваново" loading="lazy" decoding="async">
+            <img src="assets/projects/project-10/cover-thumb.webp" alt="Дом в Иваново" loading="lazy" decoding="async" width="1800" height="2156">
           </figure>
           <div class="projects__meta">
             <p class="projects__location">Дом в Иваново</p>
@@ -666,7 +693,7 @@
     <div class="designers__spread">
       <div class="designers__layout">
         <figure class="designers__visual reveal">
-          <img src="assets/designers/designer-consultation.png" alt="Консультация для дизайнеров и архитекторов" loading="lazy" decoding="async">
+          <img src="assets/designers/designer-consultation.webp" alt="Консультация для дизайнеров и архитекторов" loading="lazy" decoding="async" width="1536" height="1024">
         </figure>
         <div class="designers__side">
           <header class="designers__header reveal">

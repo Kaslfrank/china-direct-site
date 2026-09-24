@@ -301,11 +301,14 @@
     }
 
     function openContactModal(trigger) {
+      if (contactModal.classList.contains('is-open')) return;
+
       contactLastFocus = trigger;
       contactModal.setAttribute('aria-hidden', 'false');
       requestAnimationFrame(() => contactModal.classList.add('is-open'));
       document.body.style.overflow = 'hidden';
       contactModal.querySelector('.contact-modal__close')?.focus();
+      reachGoal('contact_modal_open');
     }
 
     function closeContactModal() {
@@ -436,9 +439,31 @@
 
   const METRIKA_COUNTER_ID = 110906864;
 
+  const GA4_LEAD_EVENTS = new Set([
+    'email_click',
+    'phone_click',
+    'telegram_click',
+    'whatsapp_click'
+  ]);
+
   function reachGoal(goal) {
     if (typeof ym === 'function') {
       ym(METRIKA_COUNTER_ID, 'reachGoal', goal);
+    }
+
+    if (typeof gtag === 'function') {
+      gtag('event', goal, {
+        page_location: window.location.href,
+        page_title: document.title
+      });
+
+      if (GA4_LEAD_EVENTS.has(goal)) {
+        gtag('event', 'generate_lead', {
+          contact_method: goal.replace('_click', ''),
+          page_location: window.location.href,
+          page_title: document.title
+        });
+      }
     }
   }
 
@@ -449,6 +474,11 @@
 
       const href = link.getAttribute('href') || '';
 
+      if (/^tel:/i.test(href)) {
+        reachGoal('phone_click');
+        return;
+      }
+
       if (/^mailto:/i.test(href)) {
         reachGoal('email_click');
         return;
@@ -456,6 +486,11 @@
 
       if (/t\.me\//i.test(href)) {
         reachGoal('telegram_click');
+        return;
+      }
+
+      if (/wa\.me\//i.test(href) || /api\.whatsapp\.com\//i.test(href) || /^whatsapp:\/\//i.test(href)) {
+        reachGoal('whatsapp_click');
         return;
       }
 
