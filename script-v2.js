@@ -439,32 +439,36 @@
 
   const METRIKA_COUNTER_ID = 110906864;
 
-  const GA4_LEAD_EVENTS = new Set([
-    'email_click',
-    'phone_click',
-    'telegram_click',
-    'whatsapp_click'
-  ]);
-
-  function reachGoal(goal) {
+  // Contact clicks show intent, but are not confirmed leads. A confirmed lead
+  // should only be recorded after a successful form submission or CRM capture.
+  function reachGoal(goal, params = {}) {
     if (typeof ym === 'function') {
-      ym(METRIKA_COUNTER_ID, 'reachGoal', goal);
+      ym(METRIKA_COUNTER_ID, 'reachGoal', goal, params);
     }
 
     if (typeof gtag === 'function') {
       gtag('event', goal, {
         page_location: window.location.href,
-        page_title: document.title
+        page_title: document.title,
+        ...params
       });
-
-      if (GA4_LEAD_EVENTS.has(goal)) {
-        gtag('event', 'generate_lead', {
-          contact_method: goal.replace('_click', ''),
-          page_location: window.location.href,
-          page_title: document.title
-        });
-      }
     }
+  }
+
+  function getContactPlacement(link) {
+    if (link.closest('.contact-modal')) return 'contact_modal';
+    if (link.closest('.site-header, header')) return 'header';
+    if (link.closest('.site-footer, footer')) return 'footer';
+    if (link.closest('#contacts, .discuss')) return 'contacts_section';
+    if (link.closest('.catalog')) return 'catalog';
+    return 'page_content';
+  }
+
+  function trackContactClick(goal, contactMethod, link) {
+    reachGoal(goal, {
+      contact_method: contactMethod,
+      contact_placement: getContactPlacement(link)
+    });
   }
 
   function initMetricaGoals() {
@@ -475,27 +479,27 @@
       const href = link.getAttribute('href') || '';
 
       if (/^tel:/i.test(href)) {
-        reachGoal('phone_click');
+        trackContactClick('phone_click', 'phone', link);
         return;
       }
 
       if (/^mailto:/i.test(href)) {
-        reachGoal('email_click');
+        trackContactClick('email_click', 'email', link);
         return;
       }
 
       if (/t\.me\//i.test(href)) {
-        reachGoal('telegram_click');
+        trackContactClick('telegram_click', 'telegram', link);
         return;
       }
 
       if (/wa\.me\//i.test(href) || /api\.whatsapp\.com\//i.test(href) || /^whatsapp:\/\//i.test(href)) {
-        reachGoal('whatsapp_click');
+        trackContactClick('whatsapp_click', 'whatsapp', link);
         return;
       }
 
       if (/instagram\.com/i.test(href)) {
-        reachGoal('instagram_click');
+        trackContactClick('instagram_click', 'instagram', link);
       }
     });
 
