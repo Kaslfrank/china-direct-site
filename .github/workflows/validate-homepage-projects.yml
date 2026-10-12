@@ -2,23 +2,9 @@ name: Validate homepage projects
 
 on:
   pull_request:
-    paths:
-      - index.html
-      - data/homepage-projects.json
-      - projects/**
-      - assets/projects/**
-      - scripts/validate-homepage-projects.mjs
-      - .github/workflows/validate-homepage-projects.yml
   push:
     branches:
       - main
-    paths:
-      - index.html
-      - data/homepage-projects.json
-      - projects/**
-      - assets/projects/**
-      - scripts/validate-homepage-projects.mjs
-      - .github/workflows/validate-homepage-projects.yml
 
 permissions:
   contents: read
@@ -29,5 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Validate homepage project list
         run: node scripts/validate-homepage-projects.mjs
