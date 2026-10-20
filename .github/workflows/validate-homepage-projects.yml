@@ -18,3 +18,5 @@ jobs:
 
       - name: Validate homepage project list
         run: node scripts/validate-homepage-projects.mjs
+      - name: Validate English project parity
+        run: node scripts/validate-project-translations.mjs
