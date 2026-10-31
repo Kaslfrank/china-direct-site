@@ -8,7 +8,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
   const data = new FormData(form);
-  const fields = [['Name','name'],['Company / property','company'],['Email','email'],['Island / location','location'],['Project type','type'],['Rooms / quantities','quantity'],['Furniture budget (USD)','budget'],['Target delivery date','date'],['Requirements','message']];
+  const fields = [['Name','name'],['Company / property','company'],['Email','email'],['Island / location','location'],['Project type','type'],['Service required','scope'],['Rooms / quantities','quantity'],['Furniture budget (USD)','budget'],['Target delivery date','date'],['Requirements','message']];
   const body = 'Hello China Direct,\n\nI would like to discuss a furniture project in the Maldives.\n\n' + fields.map(([label,key]) => label + ': ' + (data.get(key) || 'Not specified')).join('\n') + '\n\nI will attach any available drawings, furniture schedules or reference images.';
   const href = 'mailto:info@chinadirect.pro?subject=' + encodeURIComponent('Maldives furniture project enquiry') + '&body=' + encodeURIComponent(body);
   const status = document.querySelector('#form-status');
