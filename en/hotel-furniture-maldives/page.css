@@ -2,5 +2,3 @@
 
 .breadcrumbs{padding-top:24px;font-size:12px;color:var(--muted)}.breadcrumbs a{text-underline-offset:3px}.hero h1{font-size:clamp(46px,5.3vw,76px)}@media(max-width:650px){.hero h1{font-size:clamp(40px,10vw,62px)}}
 
-/* Hotel furnishing service */
-.hotel-service__routes,.hotel-service__installation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}.hotel-service__routes article{border-top:1px solid var(--line);padding-top:28px}.hotel-service__routes .eyebrow{margin-bottom:16px}.hotel-service p{color:var(--muted)}.hotel-service__scope{max-width:920px;padding:30px 0 15px}.hotel-service__installation{background:#e5e7dd;padding:32px;margin-top:14px}.hotel-service__installation h3{margin-top:0}.hotel-service__installation .eyebrow{margin-bottom:16px}.hotel-service__installation p:last-child{margin-bottom:0}@media(max-width:650px){.hotel-service__routes,.hotel-service__installation{grid-template-columns:1fr;gap:24px}.hotel-service__installation{padding:24px}.hotel-service__scope{padding-top:20px}}
