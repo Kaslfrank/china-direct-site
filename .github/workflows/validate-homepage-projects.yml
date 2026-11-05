@@ -20,3 +20,5 @@ jobs:
         run: node scripts/validate-homepage-projects.mjs
       - name: Validate English project parity
         run: node scripts/validate-project-translations.mjs
+      - name: Validate analytics test-traffic guard
+        run: node scripts/validate-analytics-guard.mjs
