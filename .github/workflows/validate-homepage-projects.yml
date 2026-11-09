@@ -22,3 +22,5 @@ jobs:
         run: node scripts/validate-project-translations.mjs
       - name: Validate analytics test-traffic guard
         run: node scripts/validate-analytics-guard.mjs
+      - name: Validate sitemap coverage
+        run: node scripts/validate-sitemap.mjs
