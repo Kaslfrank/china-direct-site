@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.chinadirect.pro/</loc>
     <lastmod>2026-09-20</lastmod>
@@ -297,5 +297,23 @@
 <url><loc>https://www.chinadirect.pro/en/services/hotel-completion/</loc><lastmod>2026-10-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.chinadirect.pro/services/interior-furnishing-kazakhstan/</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 <url><loc>https://www.chinadirect.pro/services/interior-furnishing-uzbekistan/</loc><lastmod>2026-11-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://www.chinadirect.pro/services/china-furniture-tour/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.chinadirect.pro/services/china-furniture-tour/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chinadirect.pro/en/services/china-furniture-tour/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chinadirect.pro/services/china-furniture-tour/" />
+  </url>
+  <url>
+    <loc>https://www.chinadirect.pro/en/services/china-furniture-tour/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.chinadirect.pro/services/china-furniture-tour/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.chinadirect.pro/en/services/china-furniture-tour/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chinadirect.pro/services/china-furniture-tour/" />
+  </url>
 </urlset>
 
