@@ -184,7 +184,7 @@ button.btn {
   align-items: center;
   justify-content: space-between;
   height: var(--header-h);
-  padding-inline: clamp(32px, 6vw, 80px);
+  padding-inline: clamp(24px, 3vw, 48px);
   background: rgba(244, 242, 237, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -231,10 +231,11 @@ button.btn {
   z-index: 0;
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex: 0 0 auto;
+  gap: 12px;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink);
   transition: color var(--dur) var(--ease);
@@ -271,15 +272,19 @@ button.btn {
 .site-header__nav {
   display: flex;
   align-items: center;
-  gap: clamp(20px, 3vw, 44px);
+  justify-content: flex-end;
+  gap: clamp(12px, 1.35vw, 24px);
+  min-width: 0;
+  margin-left: clamp(20px, 3vw, 48px);
 }
 
 .site-header__lang {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-right: clamp(4px, 1vw, 12px);
-  font-size: 10px;
+  flex: 0 0 auto;
+  margin-right: 2px;
+  font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -317,9 +322,12 @@ button.btn {
 }
 
 .site-header__nav a {
-  font-size: 10px;
+  flex: 0 0 auto;
+  font-size: 9px;
   font-weight: 400;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
+  line-height: 1.25;
+  white-space: nowrap;
   text-transform: uppercase;
   color: var(--ink-soft);
   transition: color var(--dur) var(--ease);
@@ -353,6 +361,79 @@ button.btn {
 
 .site-header__toggle.is-open span:last-child {
   transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* Keep the desktop header on one calm line. When the full navigation no
+   longer fits, switch to a deliberate menu instead of wrapping labels. */
+@media (max-width: 1480px) {
+  .site-header {
+    padding-inline: clamp(20px, 3vw, 40px);
+  }
+
+  .site-header__toggle {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+
+  .site-header__nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    max-height: calc(100dvh - var(--header-h));
+    margin-left: 0;
+    padding: 14px clamp(20px, 4vw, 64px) 24px;
+    overflow-y: auto;
+    background: rgba(244, 242, 237, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(24, 23, 22, 0.08);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform var(--dur-reveal) var(--ease-out),
+      opacity var(--dur) var(--ease),
+      visibility var(--dur);
+  }
+
+  .site-header__nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .site-header__nav > a {
+    padding: 16px 10px;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    color: var(--ink);
+  }
+
+  .site-header__lang {
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    margin: 0 0 4px;
+    padding: 0 10px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__nav a,
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__nav a:hover,
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__lang-link,
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__lang-link.is-active,
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__lang-link:hover {
+    color: var(--ink);
+  }
+
+  .site-header.is-on-hero:not(.is-scrolled) .site-header__lang-sep {
+    color: var(--ink-faint);
+  }
 }
 
 /* ── Section intro ── */
@@ -3099,6 +3180,7 @@ html:not(.js) .reveal {
   .site-header__toggle { display: flex; }
 
   .site-header__nav {
+    display: flex;
     position: fixed;
     top: var(--header-h);
     left: 0;
