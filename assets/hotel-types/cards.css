@@ -1,0 +1,27 @@
+#objects-type .geography__card {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#objects-type .hotel-type-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+#objects-type .geography__card-title {
+  padding: 24px 28px;
+}
+
+@media (max-width: 600px) {
+  #objects-type .geography__cards {
+    grid-template-columns: 1fr;
+  }
+
+  #objects-type .geography__card-title {
+    padding: 20px;
+  }
+}
