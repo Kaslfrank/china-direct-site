@@ -2307,8 +2307,8 @@ button.btn {
 .geography__card {
   display: flex;
   flex-direction: column;
-  min-height: clamp(168px, 18vw, 188px);
-  padding: 28px;
+  min-height: clamp(148px, 15vw, 168px);
+  padding: clamp(22px, 2.2vw, 26px);
   background: var(--canvas);
   border: var(--border);
   transition:
@@ -2340,7 +2340,7 @@ button.btn {
 }
 
 .geography__cities li {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 1.8;
   color: var(--ink-soft);
@@ -2820,6 +2820,8 @@ html:not(.js) .reveal {
 .geography__card:nth-child(2) { transition-delay: 0.06s; }
 .geography__card:nth-child(3) { transition-delay: 0.12s; }
 .geography__card:nth-child(4) { transition-delay: 0.18s; }
+.geography__card:nth-child(5) { transition-delay: 0.24s; }
+.geography__card:nth-child(6) { transition-delay: 0.30s; }
 
 .discuss__aside.reveal { transition-delay: 0.08s; }
 
