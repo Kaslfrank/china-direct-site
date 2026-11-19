@@ -137,21 +137,33 @@
     <path d="M309.72,19.15L317.14,19.37L323.11,19.72L328.19,20.48L328.07,21.22L321.29,22.42L314.57,22.98L312.06,23.61L318.11,23.60L311.55,25.28L307.03,26.06L302.27,28.33L296.54,28.80L294.77,29.36L286.36,29.66L290.19,30.01L288.27,30.50L290.57,31.87L287.93,32.82L283.64,33.61L282.32,34.70L278.44,35.53L278.83,36.16L283.58,36.05L283.64,36.73L276.22,38.40L268.96,37.63L260.80,38.06L256.66,37.72L251.41,37.58L251.06,36.24L256.20,35.62L254.83,33.61L256.53,33.42L263.95,34.62L260.16,32.83L255.66,32.30L257.91,31.23L262.83,30.56L263.62,29.59L259.70,28.51L258.52,27.08L266.11,27.20L268.31,27.50L272.64,26.49L266.39,26.17L256.67,26.35L251.76,25.40L249.44,24.28L246.20,23.46L245.59,22.51L249.72,21.99L252.96,21.90L258.41,21.45L262.50,20.41L265.94,20.55L268.94,21.33L271.05,19.83L274.72,19.39L279.70,19.08L288.19,18.97L289.67,19.27L297.69,18.79L303.70,18.97L309.72,19.15Z"/>
   </g>
   <g class="geo-links">
-    <g class="geo-link" data-city="moscow">
+    <g class="geo-link" data-region="russia-cis">
       <path class="geo-route" d="M814.62,185.75 Q709.56,94.67 604.49,95.12"/>
       <rect class="geo-dot" x="600.99" y="91.62" width="7" height="7"/>
     </g>
-    <g class="geo-link" data-city="dubai">
+    <g class="geo-link" data-region="gulf">
       <path class="geo-route" d="M814.62,185.75 Q734.08,174.81 653.53,179.99"/>
       <rect class="geo-dot" x="650.03" y="176.49" width="7" height="7"/>
     </g>
-    <g class="geo-link" data-city="newyork">
+    <g class="geo-link" data-region="north-america">
       <path class="geo-route" d="M814.62,185.75 Q554.52,15.04 294.43,136.91"/>
       <rect class="geo-dot" x="290.93" y="133.41" width="7" height="7"/>
     </g>
-    <g class="geo-link" data-city="london">
+    <g class="geo-link" data-region="europe">
       <path class="geo-route" d="M814.62,185.75 Q657.13,94.38 499.64,106.92"/>
       <rect class="geo-dot" x="496.14" y="103.42" width="7" height="7"/>
+    </g>
+    <g class="geo-link" data-region="central-asia">
+      <path class="geo-route" d="M814.62,185.75 Q757.00,123.00 690.00,128.00"/>
+      <rect class="geo-dot" x="686.50" y="124.50" width="7" height="7"/>
+    </g>
+    <g class="geo-link" data-region="southeast-asia">
+      <path class="geo-route" d="M814.62,185.75 Q797.00,218.00 773.00,246.00"/>
+      <rect class="geo-dot" x="769.50" y="242.50" width="7" height="7"/>
+    </g>
+    <g class="geo-link" data-region="latin-america">
+      <path class="geo-route" d="M814.62,185.75 Q588.00,228.00 390.00,326.00"/>
+      <rect class="geo-dot" x="386.50" y="322.50" width="7" height="7"/>
     </g>
   </g>
   <g class="geo-points">
