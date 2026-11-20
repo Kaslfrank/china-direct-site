@@ -334,6 +334,28 @@
     });
   }
 
+  const maxQrDialog = document.getElementById('max-qr-dialog');
+  if (maxQrDialog && typeof maxQrDialog.showModal === 'function') {
+    const maxQrTriggers = document.querySelectorAll('[data-open-max-qr]');
+    const maxQrClose = maxQrDialog.querySelector('[data-close-max-qr]');
+
+    maxQrTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (!maxQrDialog.open) maxQrDialog.showModal();
+        reachGoal('max_click', {
+          contact_method: 'max',
+          contact_placement: getContactPlacement(trigger)
+        });
+      });
+    });
+
+    maxQrClose?.addEventListener('click', () => maxQrDialog.close());
+    maxQrDialog.addEventListener('click', (event) => {
+      if (event.target === maxQrDialog) maxQrDialog.close();
+    });
+  }
+
   function initFaqAccordion() {
     const faqItems = Array.from(document.querySelectorAll('.faq__item'));
     if (!faqItems.length) return;

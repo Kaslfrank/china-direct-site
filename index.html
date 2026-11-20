@@ -920,7 +920,11 @@
                   <a class="discuss__contact-link" href="https://t.me/ChinaDirectIgor" target="_blank" rel="noopener">@ChinaDirectIgor</a>
                 </div>
                 <div class="discuss__contact-row">
-                  <span class="discuss__contact-kind">Макс · WhatsApp</span>
+                  <span class="discuss__contact-kind">MAX</span>
+                  <a class="discuss__contact-link" href="#max-qr-dialog" data-open-max-qr>+7 995 344 1995</a>
+                </div>
+                <div class="discuss__contact-row">
+                  <span class="discuss__contact-kind">WhatsApp</span>
                   <a class="discuss__contact-link" href="https://wa.me/79953441995" target="_blank" rel="noopener">+7 995 344 1995</a>
                 </div>
                 <div class="discuss__contact-row">
@@ -997,8 +1001,14 @@
         </a>
       </li>
       <li>
+        <a class="contact-modal__option" href="#max-qr-dialog" data-open-max-qr>
+          <span class="contact-modal__option-label">MAX</span>
+          <span class="contact-modal__option-value">+7 995 344 1995</span>
+        </a>
+      </li>
+      <li>
         <a class="contact-modal__option" href="https://wa.me/79953441995" target="_blank" rel="noopener">
-          <span class="contact-modal__option-label">Макс · WhatsApp</span>
+          <span class="contact-modal__option-label">WhatsApp</span>
           <span class="contact-modal__option-value">+7 995 344 1995</span>
         </a>
       </li>
@@ -1011,6 +1021,21 @@
     </ul>
   </div>
 </div>
+
+<dialog class="max-qr-dialog" id="max-qr-dialog" aria-labelledby="max-qr-title">
+  <button type="button" class="max-qr-dialog__close" data-close-max-qr aria-label="Закрыть QR-код MAX">
+    <span aria-hidden="true">×</span>
+  </button>
+  <div class="max-qr-dialog__content">
+    <header class="max-qr-dialog__header">
+      <p class="max-qr-dialog__eyebrow">MAX</p>
+      <h2 class="max-qr-dialog__title" id="max-qr-title">Напишите Игорю в MAX</h2>
+      <p class="max-qr-dialog__lead">Откройте MAX на телефоне и отсканируйте QR-код.</p>
+    </header>
+    <img class="max-qr-dialog__image" src="/assets/contact/max-igor-qr.jpg" alt="QR-код профиля Игоря в MAX" width="1080" height="1662" loading="lazy" decoding="async">
+    <p class="max-qr-dialog__number">+7 995 344 1995</p>
+  </div>
+</dialog>
 
 <div class="project-gallery" id="project-gallery" aria-hidden="true">
   <div class="project-gallery__backdrop" data-close-gallery></div>
