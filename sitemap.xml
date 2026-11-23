@@ -315,5 +315,17 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.chinadirect.pro/en/services/china-furniture-tour/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chinadirect.pro/services/china-furniture-tour/" />
   </url>
+  <url>
+    <loc>https://www.chinadirect.pro/projects/modern-country-house/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.chinadirect.pro/en/projects/modern-country-house/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
 
